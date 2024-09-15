@@ -6,7 +6,7 @@ This would typically be used in a dub sound system control tower, right before t
 I am making it for [my own dub sound system](https://linktr.ee/mooncrownsoundsystem), but I am sharing it with the world so that everyone can enjoy and contribute to it.
 
 ### **_[Figma design of the front plate (click to open in figma) :](https://www.figma.com/design/a7w33TZh6XjIDETXx0zezs/PROJECT-TROUBLEMAKER?node-id=2-57&t=kPiumWiky9OcTQFE-1)_**
-[![frontplate.jpg](frontplate.jpg)](https://www.figma.com/design/a7w33TZh6XjIDETXx0zezs/PROJECT-TROUBLEMAKER?node-id=2-57&t=kPiumWiky9OcTQFE-1)
+[![frontplate.jpg](Assets/frontplate.jpg)](https://www.figma.com/design/a7w33TZh6XjIDETXx0zezs/PROJECT-TROUBLEMAKER?node-id=2-57&t=kPiumWiky9OcTQFE-1)
 
 Please note that this project is still in its early stages, and it is not yet ready for use.
 Also, the aim is not to provide a classic preamp to use with a microphone, but rather a preamp to use with a line-level signal, like a CD player, a computer, a synthesizer, etc.
@@ -47,7 +47,7 @@ Please feel free to contribute by opening a PR or an issue.
 
 
 # [Signal Flow (click to open in whimsical)](https://whimsical.com/project-troublemaker-signal-flow-PksJ2XxrEqBQ8Brrcc3UFW)
-[![signalflow.png](signalflow.png)](https://whimsical.com/project-troublemaker-signal-flow-PksJ2XxrEqBQ8Brrcc3UFW)
+[![signalflow.png](Assets/signalflow.png)](https://whimsical.com/project-troublemaker-signal-flow-PksJ2XxrEqBQ8Brrcc3UFW)
 ## Input modes
 - **_Stereo mode_**: The default mode, where the HifiBerry is used as a stereo input and output.
 - **_Aux send mode_** (to be implemented): The 2 stereo channels of the HifiBerry are split in 2 mono input channels and 2 mono output channels.   
