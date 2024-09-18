@@ -16,7 +16,8 @@ It is meant to be used with a DSP that can handle multiple outputs, and optional
 
 **At the moment, the inputs and outputs are stereo only**, but more input modes will be added in the future (see Signal Flow section).
 
-# Software & Hardware stack
+# [Software & Hardware stack (Click to open in whimsical)](https://whimsical.com/project-troublemaker-project-diagram-5eJmr8VAKfvCzGg2v3uwR2)
+[![stackdiagram.png](Assets%2Fstackdiagram.png)](https://whimsical.com/project-troublemaker-project-diagram-5eJmr8VAKfvCzGg2v3uwR2)
 Project Troublemaker is based on [ELK Audio OS](https://elk-audio.github.io/elk-docs/html/index.html), which is a Linux-based realtime audio OS that can run VST3 plugins.  
 It is **_HIGHLY RECOMMENDED_** to get a grasp of ELK Audio OS before diving into this project.
 
