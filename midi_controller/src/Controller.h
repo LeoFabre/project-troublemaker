@@ -13,8 +13,8 @@ public:
     bool analog;
     byte enablepin;
 
-    void enableMux();
-    void disableMux();
+    void enableMux() const;
+    void disableMux() const;
 };
 
 //************************************************************************
@@ -55,7 +55,7 @@ class Pot
 public:
     Pot(byte pin, byte command, byte control, byte channel);
     Pot(Mux& mux, byte muxpin, byte command, byte control, byte channel);
-    void muxUpdate();
+    void muxUpdate() const;
     void newValue(byte command, byte value, byte channel);
     byte getValue();
     byte Pcommand;

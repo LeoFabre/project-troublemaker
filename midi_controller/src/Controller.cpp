@@ -17,11 +17,11 @@ Mux::Mux(byte outpin_, byte numPins_, bool analog_, byte enablepin_)
   if (numPins > 8) pinMode(5, OUTPUT);
 }
 
-void Mux::enableMux() {
+void Mux::enableMux() const {
   digitalWrite(enablepin, LOW); // Set the enable pin to low to activate the mux
 }
 
-void Mux::disableMux() {
+void Mux::disableMux() const {
   digitalWrite(enablepin, HIGH); // Set the enable pin to high to deactivate the mux
 }
 //****************************************************************************************
@@ -133,7 +133,7 @@ Pot::Pot(byte pin, byte command, byte control, byte channel)
   Pchannel = channel;
 }
 
-void Pot::muxUpdate()
+void Pot::muxUpdate() const
 {
   _mux->enableMux();
   byte temp = _muxpin;
