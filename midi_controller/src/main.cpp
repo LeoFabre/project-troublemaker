@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <MIDIUSB.h>
 #include "Controller.h"
-
+#include "utils.h"
 /*************************************************************
   MIDI CONTROLLER
 
@@ -157,20 +157,20 @@ void updateButtons()
             switch (BUTTONS[i]->Bcommand)
             {
             case 0: //Note
-                usbMIDI.sendNoteOn(BUTTONS[i]->Bvalue, 127, BUTTONS[i]->Bchannel);
+                SendNoteOn(BUTTONS[i]->Bvalue, 127, BUTTONS[i]->Bchannel);
                 break;
             case 1: //CC
-                usbMIDI.sendControlChange(BUTTONS[i]->Bvalue, 127, BUTTONS[i]->Bchannel);
+                SendControlChange(BUTTONS[i]->Bvalue, 127, BUTTONS[i]->Bchannel);
                 break;
             case 2: //Toggle
                 if (BUTTONS[i]->Btoggle == 0)
                 {
-                    usbMIDI.sendControlChange(BUTTONS[i]->Bvalue, 127, BUTTONS[i]->Bchannel);
+                    SendControlChange(BUTTONS[i]->Bvalue, 127, BUTTONS[i]->Bchannel);
                     BUTTONS[i]->Btoggle = 1;
                 }
                 else if (BUTTONS[i]->Btoggle == 1)
                 {
-                    usbMIDI.sendControlChange(BUTTONS[i]->Bvalue, 0, BUTTONS[i]->Bchannel);
+                    SendControlChange(BUTTONS[i]->Bvalue, 0, BUTTONS[i]->Bchannel);
                     BUTTONS[i]->Btoggle = 0;
                 }
                 break;
@@ -183,10 +183,10 @@ void updateButtons()
             switch (BUTTONS[i]->Bcommand)
             {
             case 0:
-                usbMIDI.sendNoteOff(BUTTONS[i]->Bvalue, 0, BUTTONS[i]->Bchannel);
+                SendNoteOff(BUTTONS[i]->Bvalue, 0, BUTTONS[i]->Bchannel);
                 break;
             case 1:
-                usbMIDI.sendControlChange(BUTTONS[i]->Bvalue, 0, BUTTONS[i]->Bchannel);
+                SendControlChange(BUTTONS[i]->Bvalue, 0, BUTTONS[i]->Bchannel);
                 break;
             }
         }
@@ -208,20 +208,20 @@ void updateMuxButtons()
             switch (MUXBUTTONS[i]->Bcommand)
             {
             case 0: //Note
-                usbMIDI.sendNoteOn(MUXBUTTONS[i]->Bvalue, 127, MUXBUTTONS[i]->Bchannel);
+                SendNoteOn(MUXBUTTONS[i]->Bvalue, 127, MUXBUTTONS[i]->Bchannel);
                 break;
             case 1: //CC
-                usbMIDI.sendControlChange(MUXBUTTONS[i]->Bvalue, 127, MUXBUTTONS[i]->Bchannel);
+                SendControlChange(MUXBUTTONS[i]->Bvalue, 127, MUXBUTTONS[i]->Bchannel);
                 break;
             case 2: //Toggle
                 if (MUXBUTTONS[i]->Btoggle == 0)
                 {
-                    usbMIDI.sendControlChange(MUXBUTTONS[i]->Bvalue, 127, MUXBUTTONS[i]->Bchannel);
+                    SendControlChange(MUXBUTTONS[i]->Bvalue, 127, MUXBUTTONS[i]->Bchannel);
                     MUXBUTTONS[i]->Btoggle = 1;
                 }
                 else if (MUXBUTTONS[i]->Btoggle == 1)
                 {
-                    usbMIDI.sendControlChange(MUXBUTTONS[i]->Bvalue, 0, MUXBUTTONS[i]->Bchannel);
+                    SendControlChange(MUXBUTTONS[i]->Bvalue, 0, MUXBUTTONS[i]->Bchannel);
                     MUXBUTTONS[i]->Btoggle = 0;
                 }
                 break;
@@ -233,10 +233,12 @@ void updateMuxButtons()
             switch (MUXBUTTONS[i]->Bcommand)
             {
             case 0:
-                usbMIDI.sendNoteOff(MUXBUTTONS[i]->Bvalue, 0, MUXBUTTONS[i]->Bchannel);
+                SendNoteOff(MUXBUTTONS[i]->Bvalue, 0, MUXBUTTONS[i]->Bchannel);
                 break;
             case 1:
-                usbMIDI.sendControlChange(MUXBUTTONS[i]->Bvalue, 0, MUXBUTTONS[i]->Bchannel);
+                SendControlChange(MUXBUTTONS[i]->Bvalue, 0, MUXBUTTONS[i]->Bchannel);
+                break;
+            default:
                 break;
             }
         }
@@ -249,7 +251,7 @@ void updatePots()
     for (int i = 0; i < NUMBER_POTS; i = i + 1)
     {
         byte potmessage = POTS[i]->getValue();
-        if (potmessage != 255) usbMIDI.sendControlChange(POTS[i]->Pcontrol, potmessage, POTS[i]->Pchannel);
+        if (potmessage != 255) SendControlChange(POTS[i]->Pcontrol, potmessage, POTS[i]->Pchannel);
     }
 }
 
@@ -278,20 +280,23 @@ void updateMuxPots()
             Serial.print(" sur le canal ");
             Serial.println(MUXPOTS[i]->Pchannel);
 
-            usbMIDI.sendControlChange(MUXPOTS[i]->Pcontrol, potmessage, MUXPOTS[i]->Pchannel);
+            SendControlChange(MUXPOTS[i]->Pcontrol, potmessage, MUXPOTS[i]->Pchannel);
         }
     }
 }
 
 void setup()
 {
-    usbMIDI.begin();
+    Serial.begin(9600);
+    Serial.println("MIDI Controller Démarré sur Teensy");
 }
 
 void loop()
 {
-    if (NUMBER_BUTTONS != 0) updateButtons();
-    if (NUMBER_POTS != 0) updatePots();
-    if (NUMBER_MUX_BUTTONS != 0) updateMuxButtons();
-    if (NUMBER_MUX_POTS != 0) updateMuxPots();
+    Serial.println("the bitch is looping");
+    // if (NUMBER_BUTTONS != 0) updateButtons();
+    // if (NUMBER_POTS != 0) updatePots();
+    // if (NUMBER_MUX_BUTTONS != 0) updateMuxButtons();
+    // if (NUMBER_MUX_POTS != 0) updateMuxPots();
+    delay(10);
 }
