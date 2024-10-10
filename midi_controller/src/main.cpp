@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include <MIDIUSB.h>
 #include "Controller.h"
 #include "utils.h"
 /*************************************************************
@@ -21,7 +20,7 @@ byte NUMBER_POTS = 0;
 //---How many buttons are connected to a multiplexer?---------
 byte NUMBER_MUX_BUTTONS = 0;
 //---How many potentiometers are connected to a multiplexer?--
-byte NUMBER_MUX_POTS = 16;
+byte NUMBER_MUX_POTS = 8;
 //************************************************************
 
 //***ANY MULTIPLEXERS? (74HC4067)************************************
@@ -34,7 +33,7 @@ byte NUMBER_MUX_POTS = 16;
 //Mux M1(10, 16, false); //Digital multiplexer on Arduino pin 10
 //Mux M2(A5, 8, true); //Analog multiplexer on Arduino analog pin A0
 Mux M1(A0, 16, true, 6); //Analog multiplexer on Arduino analog pin A0, enable pin on pin 6
-Mux M2(A0, 16, true, 7); //Analog multiplexer on Arduino analog pin A0, enable pin on pin 7
+// Mux M2(A0, 16, true, 7); //Analog multiplexer on Arduino analog pin A0, enable pin on pin 7
 //*******************************************************************
 
 
@@ -112,14 +111,14 @@ Pot MPO6(M1, 5, 0, 6, 1);
 Pot MPO7(M1, 6, 0, 7, 1);
 Pot MPO8(M1, 7, 0, 8, 1);
 
-Pot MPO9(M2, 0, 0, 9, 1);
-Pot MPO10(M2, 1, 0, 10, 1);
-Pot MPO11(M2, 2, 0, 11, 1);
-Pot MPO12(M2, 3, 0, 12, 1);
-Pot MPO13(M2, 4, 0, 13, 1);
-Pot MPO14(M2, 5, 0, 14, 1);
-Pot MPO15(M2, 6, 0, 15, 1);
-Pot MPO16(M2, 7, 0, 16, 1);
+// Pot MPO9(M2, 0, 0, 9, 1);
+// Pot MPO10(M2, 1, 0, 10, 1);
+// Pot MPO11(M2, 2, 0, 11, 1);
+// Pot MPO12(M2, 3, 0, 12, 1);
+// Pot MPO13(M2, 4, 0, 13, 1);
+// Pot MPO14(M2, 5, 0, 14, 1);
+// Pot MPO15(M2, 6, 0, 15, 1);
+// Pot MPO16(M2, 7, 0, 16, 1);
 //*******************************************************************
 //Add multiplexed pots used to array below like this:
 //Pot *MUXPOTS[] {&MPO1, &MPO2, &MPO3, &MPO4, &MPO5, &MPO6.....};
@@ -132,14 +131,14 @@ Pot* MUXPOTS[]{
     &MPO6,
     &MPO7,
     &MPO8,
-    &MPO9,
-    &MPO10,
-    &MPO11,
-    &MPO12,
-    &MPO13,
-    &MPO14,
-    &MPO15,
-    &MPO16
+    // &MPO9,
+    // &MPO10,
+    // &MPO11,
+    // &MPO12,
+    // &MPO13,
+    // &MPO14,
+    // &MPO15,
+    // &MPO16
 };
 
 //*******************************************************************
@@ -174,6 +173,8 @@ void updateButtons()
                     BUTTONS[i]->Btoggle = 0;
                 }
                 break;
+            default:
+                break;
             }
         }
 
@@ -187,6 +188,8 @@ void updateButtons()
                 break;
             case 1:
                 SendControlChange(BUTTONS[i]->Bvalue, 0, BUTTONS[i]->Bchannel);
+                break;
+            default:
                 break;
             }
         }
@@ -224,6 +227,8 @@ void updateMuxButtons()
                     SendControlChange(MUXBUTTONS[i]->Bvalue, 0, MUXBUTTONS[i]->Bchannel);
                     MUXBUTTONS[i]->Btoggle = 0;
                 }
+                break;
+            default:
                 break;
             }
         }
