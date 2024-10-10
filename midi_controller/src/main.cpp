@@ -39,12 +39,9 @@ void setup()
 {
     Control_Surface.begin();
     Serial.begin(115200);
-    Serial.println("MIDI Controller Démarré sur Teensy");
-    pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop()
 {
     Control_Surface.loop();
-    Serial.println("the bitch is looping");
 }
