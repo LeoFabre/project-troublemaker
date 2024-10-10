@@ -1,307 +1,50 @@
 #include <Arduino.h>
-#include "Controller.h"
-#include "utils.h"
-/*************************************************************
-  MIDI CONTROLLER
+#include <Control_Surface.h>
 
-  by Notes and Volts
-  www.notesandvolts.com
+USBMIDI_Interface midi_interface;
 
-  Adapted to work on Teensy 4.1 + MIDIUSB by Leo Fabre
- *************************************************************/
-
-//************************************************************
-//***SET THE NUMBER OF CONTROLS USED**************************
-//************************************************************
-//---How many buttons are connected directly to pins?---------
-byte NUMBER_BUTTONS = 0;
-//---How many potentiometers are connected directly to pins?--
-byte NUMBER_POTS = 0;
-//---How many buttons are connected to a multiplexer?---------
-byte NUMBER_MUX_BUTTONS = 0;
-//---How many potentiometers are connected to a multiplexer?--
-byte NUMBER_MUX_POTS = 8;
-//************************************************************
-
-//***ANY MULTIPLEXERS? (74HC4067)************************************
-//MUX address pins must be connected to Arduino UNO pins 2,3,4,5
-//A0 = PIN2, A1 = PIN3, A2 = PIN4, A3 = PIN5
-//*******************************************************************
-//Mux NAME (OUTPUT PIN, How Many Mux Pins?(8 or 16) , Is It Analog?, Enable Pin);
-
-
-//Mux M1(10, 16, false); //Digital multiplexer on Arduino pin 10
-//Mux M2(A5, 8, true); //Analog multiplexer on Arduino analog pin A0
-Mux M1(A0, 16, true, 6); //Analog multiplexer on Arduino analog pin A0, enable pin on pin 6
-// Mux M2(A0, 16, true, 7); //Analog multiplexer on Arduino analog pin A0, enable pin on pin 7
-//*******************************************************************
-
-
-//***DEFINE DIRECTLY CONNECTED POTENTIOMETERS************************
-//Pot (Pin Number, Command, CC Control, Channel Number)
-//**Command parameter is for future use**
-
-//Pot PO1(A0, 0, 1, 1);
-//Pot PO2(A1, 0, 10, 1);
-//Pot PO3(A2, 0, 22, 1);
-//Pot PO4(A3, 0, 118, 1);
-//Pot PO5(A4, 0, 30, 1);
-//Pot PO6(A5, 0, 31, 1);
-//*******************************************************************
-//Add pots used to array below like this->  Pot *POTS[] {&PO1, &PO2, &PO3, &PO4, &PO5, &PO6};
-Pot* POTS[]{};
-//*******************************************************************
-
-
-//***DEFINE DIRECTLY CONNECTED BUTTONS*******************************
-//Button (Pin Number, Command, Note Number, Channel, Debounce Time)
-//** Command parameter 0=NOTE  1=CC  2=Toggle CC **
-
-//Button BU1(2, 0, 60, 1, 5 );
-//Button BU2(3, 0, 61, 1, 5 );
-//Button BU3(4, 0, 62, 1, 5 );
-//Button BU4(5, 0, 63, 1, 5 );
-//Button BU5(6, 0, 64, 1, 5 );
-//Button BU6(7, 0, 65, 1, 5 );
-//Button BU7(8, 1, 64, 1, 5 );
-//Button BU8(9, 2, 64, 1, 5 );
-//*******************************************************************
-//Add buttons used to array below like this->  Button *BUTTONS[] {&BU1, &BU2, &BU3, &BU4, &BU5, &BU6, &BU7, &BU8};
-Button* BUTTONS[]{};
-//*******************************************************************
-
-
-//***DEFINE BUTTONS CONNECTED TO MULTIPLEXER*************************
-//Button::Button(Mux mux, byte muxpin, byte command, byte value, byte channel, byte debounce)
-//** Command parameter 0=NOTE  1=CC  2=Toggle CC **
-
-//Button MBU1(M1, 0, 0, 70, 1, 5);
-//Button MBU2(M1, 1, 1, 71, 1, 5);
-//Button MBU3(M1, 2, 2, 72, 1, 5);
-//Button MBU4(M1, 3, 0, 73, 1, 5);
-//Button MBU5(M1, 4, 0, 74, 1, 5);
-//Button MBU6(M1, 5, 0, 75, 1, 5);
-//Button MBU7(M1, 6, 0, 76, 1, 5);
-//Button MBU8(M1, 7, 0, 77, 1, 5);
-//Button MBU9(M1, 8, 0, 78, 1, 5);
-//Button MBU10(M1, 9, 0, 79, 1, 5);
-//Button MBU11(M1, 10, 0, 80, 1, 5);
-//Button MBU12(M1, 11, 0, 81, 1, 5);
-//Button MBU13(M1, 12, 0, 82, 1, 5);
-//Button MBU14(M1, 13, 0, 83, 1, 5);
-//Button MBU15(M1, 14, 0, 84, 1, 5);
-//Button MBU16(M1, 15, 0, 85, 1, 5);
-//*******************************************************************
-////Add multiplexed buttons used to array below like this->  Button *MUXBUTTONS[] {&MBU1, &MBU2, &MBU3, &MBU4, &MBU5, &MBU6.....};
-Button* MUXBUTTONS[]{};
-
-//*******************************************************************
-
-
-//***DEFINE POTENTIOMETERS CONNECTED TO MULTIPLEXER*******************
-//Pot::Pot(Mux mux, byte muxpin, byte command, byte control, byte channel)
-//**Command parameter is for future use**
-
-Pot MPO1(M1, 0, 0, 1, 1);
-Pot MPO2(M1, 1, 0, 2, 1);
-Pot MPO3(M1, 2, 0, 3, 1);
-Pot MPO4(M1, 3, 0, 4, 1);
-Pot MPO5(M1, 4, 0, 5, 1);
-Pot MPO6(M1, 5, 0, 6, 1);
-Pot MPO7(M1, 6, 0, 7, 1);
-Pot MPO8(M1, 7, 0, 8, 1);
-
-// Pot MPO9(M2, 0, 0, 9, 1);
-// Pot MPO10(M2, 1, 0, 10, 1);
-// Pot MPO11(M2, 2, 0, 11, 1);
-// Pot MPO12(M2, 3, 0, 12, 1);
-// Pot MPO13(M2, 4, 0, 13, 1);
-// Pot MPO14(M2, 5, 0, 14, 1);
-// Pot MPO15(M2, 6, 0, 15, 1);
-// Pot MPO16(M2, 7, 0, 16, 1);
-//*******************************************************************
-//Add multiplexed pots used to array below like this:
-//Pot *MUXPOTS[] {&MPO1, &MPO2, &MPO3, &MPO4, &MPO5, &MPO6.....};
-Pot* MUXPOTS[]{
-    &MPO1,
-    &MPO2,
-    &MPO3,
-    &MPO4,
-    &MPO5,
-    &MPO6,
-    &MPO7,
-    &MPO8,
-    // &MPO9,
-    // &MPO10,
-    // &MPO11,
-    // &MPO12,
-    // &MPO13,
-    // &MPO14,
-    // &MPO15,
-    // &MPO16
+//Analog multiplexer on Arduino analog pin A0, enable pin on pin 6
+CD74HC4067 mux1 = {
+    A0,
+    {2, 3, 4, 5},
+    6,
 };
 
-//*******************************************************************
+//Analog multiplexer on Arduino analog pin A0, enable pin on pin 7
+CD74HC4067 mux2 = {
+    A0,
+    {2, 3, 4, 5},
+    7,
+};
 
-void updateButtons()
-{
-    // Cycle through Button array
-    for (int i = 0; i < NUMBER_BUTTONS; i = i + 1)
-    {
-        byte message = BUTTONS[i]->getValue();
+CCPotentiometer pot1 = {mux1.pin(0), {MIDI_CC::General_Purpose_Controller_1, Channel_1}};
+CCPotentiometer pot2 = {mux1.pin(1), {MIDI_CC::General_Purpose_Controller_1, Channel_2}};
+CCPotentiometer pot3 = {mux1.pin(2), {MIDI_CC::General_Purpose_Controller_1, Channel_3}};
+CCPotentiometer pot4 = {mux1.pin(3), {MIDI_CC::General_Purpose_Controller_1, Channel_4}};
+CCPotentiometer pot5 = {mux1.pin(4), {MIDI_CC::General_Purpose_Controller_1, Channel_5}};
+CCPotentiometer pot6 = {mux1.pin(5), {MIDI_CC::General_Purpose_Controller_1, Channel_6}};
+CCPotentiometer pot7 = {mux1.pin(6), {MIDI_CC::General_Purpose_Controller_1, Channel_7}};
+CCPotentiometer pot8 = {mux1.pin(7), {MIDI_CC::General_Purpose_Controller_1, Channel_8}};
 
-        //  Button is pressed
-        if (message == 0)
-        {
-            switch (BUTTONS[i]->Bcommand)
-            {
-            case 0: //Note
-                SendNoteOn(BUTTONS[i]->Bvalue, 127, BUTTONS[i]->Bchannel);
-                break;
-            case 1: //CC
-                SendControlChange(BUTTONS[i]->Bvalue, 127, BUTTONS[i]->Bchannel);
-                break;
-            case 2: //Toggle
-                if (BUTTONS[i]->Btoggle == 0)
-                {
-                    SendControlChange(BUTTONS[i]->Bvalue, 127, BUTTONS[i]->Bchannel);
-                    BUTTONS[i]->Btoggle = 1;
-                }
-                else if (BUTTONS[i]->Btoggle == 1)
-                {
-                    SendControlChange(BUTTONS[i]->Bvalue, 0, BUTTONS[i]->Bchannel);
-                    BUTTONS[i]->Btoggle = 0;
-                }
-                break;
-            default:
-                break;
-            }
-        }
-
-        //  Button is not pressed
-        if (message == 1)
-        {
-            switch (BUTTONS[i]->Bcommand)
-            {
-            case 0:
-                SendNoteOff(BUTTONS[i]->Bvalue, 0, BUTTONS[i]->Bchannel);
-                break;
-            case 1:
-                SendControlChange(BUTTONS[i]->Bvalue, 0, BUTTONS[i]->Bchannel);
-                break;
-            default:
-                break;
-            }
-        }
-    }
-}
-
-//*******************************************************************
-void updateMuxButtons()
-{
-    // Cycle through Mux Button array
-    for (int i = 0; i < NUMBER_MUX_BUTTONS; i = i + 1)
-    {
-        MUXBUTTONS[i]->muxUpdate();
-        byte message = MUXBUTTONS[i]->getValue();
-
-        //  Button is pressed
-        if (message == 0)
-        {
-            switch (MUXBUTTONS[i]->Bcommand)
-            {
-            case 0: //Note
-                SendNoteOn(MUXBUTTONS[i]->Bvalue, 127, MUXBUTTONS[i]->Bchannel);
-                break;
-            case 1: //CC
-                SendControlChange(MUXBUTTONS[i]->Bvalue, 127, MUXBUTTONS[i]->Bchannel);
-                break;
-            case 2: //Toggle
-                if (MUXBUTTONS[i]->Btoggle == 0)
-                {
-                    SendControlChange(MUXBUTTONS[i]->Bvalue, 127, MUXBUTTONS[i]->Bchannel);
-                    MUXBUTTONS[i]->Btoggle = 1;
-                }
-                else if (MUXBUTTONS[i]->Btoggle == 1)
-                {
-                    SendControlChange(MUXBUTTONS[i]->Bvalue, 0, MUXBUTTONS[i]->Bchannel);
-                    MUXBUTTONS[i]->Btoggle = 0;
-                }
-                break;
-            default:
-                break;
-            }
-        }
-        //  Button is not pressed
-        if (message == 1)
-        {
-            switch (MUXBUTTONS[i]->Bcommand)
-            {
-            case 0:
-                SendNoteOff(MUXBUTTONS[i]->Bvalue, 0, MUXBUTTONS[i]->Bchannel);
-                break;
-            case 1:
-                SendControlChange(MUXBUTTONS[i]->Bvalue, 0, MUXBUTTONS[i]->Bchannel);
-                break;
-            default:
-                break;
-            }
-        }
-    }
-}
-
-//***********************************************************************
-void updatePots()
-{
-    for (int i = 0; i < NUMBER_POTS; i = i + 1)
-    {
-        byte potmessage = POTS[i]->getValue();
-        if (potmessage != 255) SendControlChange(POTS[i]->Pcontrol, potmessage, POTS[i]->Pchannel);
-    }
-}
-
-//***********************************************************************
-void updateMuxPots()
-{
-    for (int i = 0; i < NUMBER_MUX_POTS; i = i + 1)
-    {
-        Serial.print("Sélection du Potentiomètre Multiplexé ");
-        Serial.println(i + 1);
-
-        MUXPOTS[i]->muxUpdate();
-        byte potmessage = MUXPOTS[i]->getValue();
-
-        Serial.print("Valeur lue du Potentiomètre ");
-        Serial.print(i + 1);
-        Serial.print(": ");
-        Serial.println(potmessage);
-
-        if (potmessage != 255)
-        {
-            Serial.print("Envoi de CC ");
-            Serial.print(MUXPOTS[i]->Pcontrol);
-            Serial.print(" avec valeur ");
-            Serial.print(potmessage);
-            Serial.print(" sur le canal ");
-            Serial.println(MUXPOTS[i]->Pchannel);
-
-            SendControlChange(MUXPOTS[i]->Pcontrol, potmessage, MUXPOTS[i]->Pchannel);
-        }
-    }
-}
+CCPotentiometer pot9 = {mux2.pin(0), {MIDI_CC::General_Purpose_Controller_1, Channel_9}};
+CCPotentiometer pot10 = {mux2.pin(1), {MIDI_CC::General_Purpose_Controller_1, Channel_10}};
+CCPotentiometer pot11 = {mux2.pin(2), {MIDI_CC::General_Purpose_Controller_1, Channel_11}};
+CCPotentiometer pot12 = {mux2.pin(3), {MIDI_CC::General_Purpose_Controller_1, Channel_12}};
+CCPotentiometer pot13 = {mux2.pin(4), {MIDI_CC::General_Purpose_Controller_1, Channel_13}};
+CCPotentiometer pot14 = {mux2.pin(5), {MIDI_CC::General_Purpose_Controller_1, Channel_14}};
+CCPotentiometer pot15 = {mux2.pin(6), {MIDI_CC::General_Purpose_Controller_1, Channel_15}};
+CCPotentiometer pot16 = {mux2.pin(7), {MIDI_CC::General_Purpose_Controller_1, Channel_16}};
 
 void setup()
 {
-    Serial.begin(9600);
+    Control_Surface.begin();
+    Serial.begin(115200);
     Serial.println("MIDI Controller Démarré sur Teensy");
+    pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop()
 {
+    Control_Surface.loop();
     Serial.println("the bitch is looping");
-    // if (NUMBER_BUTTONS != 0) updateButtons();
-    // if (NUMBER_POTS != 0) updatePots();
-    // if (NUMBER_MUX_BUTTONS != 0) updateMuxButtons();
-    // if (NUMBER_MUX_POTS != 0) updateMuxPots();
-    delay(10);
 }
