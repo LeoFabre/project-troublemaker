@@ -1,0 +1,111 @@
+(footprint "arcade_service_button_leozor"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0.01 -4.74 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "61b9259b-4776-4de6-a074-777373315cb6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "btn_sampler_stop"
+		(at 0.01 6.1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "10eae86d-a3e1-46d8-b3a8-1bff8ad473be")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" "leozorLib:arcade_service_button_leozor"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9cd45243-871c-4033-bfbe-c24e1e152446")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0713e3f2-fa6a-4118-9d78-51f89c337dab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Push button switch, generic, two pins"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "742eb1e0-ac66-4328-9968-18a6f6766b39")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_circle
+		(center 0 0)
+		(end 3.25 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "14a96ed9-c59f-4fbc-ab7c-bb2ece6c4a27")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0.01 7.6 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "112f9fce-3fb5-4750-9872-45ce2a6c7f66")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole oval
+		(at 0 1.75)
+		(size 2.9 1.6)
+		(drill oval 2.1 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 45)
+		(uuid "20a8e933-864d-4f8e-8b48-1cd93cd6ec02")
+	)
+	(pad "2" thru_hole oval
+		(at 0 -1.75)
+		(size 2.9 1.6)
+		(drill oval 2.1 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 45)
+		(uuid "9474a246-a8c4-4de8-abd2-c19c650befab")
+	)
+)
