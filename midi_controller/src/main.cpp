@@ -39,18 +39,36 @@ CD74HC4067 mux5 = {
 };
 
 //Sampler controls
-CCButton SamplerS1 = {11, {MIDI_CC::General_Purpose_Controller_1, Channel_1}};
-CCButton SamplerS2 = {12, {MIDI_CC::General_Purpose_Controller_1, Channel_2}};
-CCButton SamplerS3 = {A10, {MIDI_CC::General_Purpose_Controller_1, Channel_3}};
-CCButton SamplerS4 = {A11, {MIDI_CC::General_Purpose_Controller_1, Channel_4}};
-CCButton SamplerS5 = {A12, {MIDI_CC::General_Purpose_Controller_1, Channel_5}};
-CCButton SamplerS6 = {A13, {MIDI_CC::General_Purpose_Controller_1, Channel_6}};
-CCButton SamplerS7 = {28, {MIDI_CC::General_Purpose_Controller_1, Channel_7}};
-CCButton SamplerS8 = {29, {MIDI_CC::General_Purpose_Controller_1, Channel_8}};
-CCButton SamplerS9 = {30, {MIDI_CC::General_Purpose_Controller_1, Channel_9}};
-CCButton SamplerS10 = {31, {MIDI_CC::General_Purpose_Controller_1, Channel_10}};
-CCButton SamplerS11 = {32, {MIDI_CC::General_Purpose_Controller_1, Channel_11}};
-CCButton SamplerStop = {A9, {MIDI_CC::General_Purpose_Controller_1, Channel_12}};
+Button SamplerStop = {A9};
+Button SamplerS1 = {32};
+Button SamplerS2 = {31};
+Button SamplerS3 = {30};
+Button SamplerS4 = {29};
+Button SamplerS5 = {28};
+Button SamplerS6 = {A13};
+Button SamplerS7 = {A12};
+Button SamplerS8 = {A11};
+Button SamplerS9 = {A10};
+Button SamplerS10 = {12};
+Button SamplerS11 = {11};
+NoteButtons<12> samplerButtons(
+    {
+        SamplerStop,
+        SamplerS1,
+        SamplerS2,
+        SamplerS3,
+        SamplerS4,
+        SamplerS5,
+        SamplerS6,
+        SamplerS7,
+        SamplerS8,
+        SamplerS9,
+        SamplerS10,
+        SamplerS11
+    },
+    {59, Channel_1}, // Adresse MIDI de base
+    {1} // Incrément pour chaque bouton
+);
 CCPotentiometer SamplerSpeed = {mux1.pin(0), {MIDI_CC::General_Purpose_Controller_1, Channel_13}};
 CCPotentiometer SamplerReverb = {mux1.pin(1), {MIDI_CC::General_Purpose_Controller_1, Channel_14}};
 CCPotentiometer SamplerDelay = {mux1.pin(2), {MIDI_CC::General_Purpose_Controller_1, Channel_15}};
@@ -162,10 +180,12 @@ CCPotentiometer ReverbLevel = {mux5.pin(15), {MIDI_CC::General_Purpose_Controlle
 void setup()
 {
     Control_Surface.begin();
+    samplerButtons.begin();
     Serial.begin(115200);
 }
 
 void loop()
 {
     Control_Surface.loop();
+    samplerButtons.update();
 }
