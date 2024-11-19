@@ -1,0 +1,1071 @@
+{
+    "host_config": {
+        "samplerate": 48000
+    },
+    "tracks": [
+        {
+            "name": "main",
+            "channels": 2,
+            "inputs": [
+                {
+                    "engine_bus": 0,
+                    "track_bus": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "engine_bus": 0,
+                    "track_bus": 0
+                }
+            ],
+            "plugins": [
+                {
+                    "uid": "sushi.testing.gain",
+                    "name": "input_gain",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.testing.send",
+                    "name": "main_echo_send",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.testing.send",
+                    "name": "main_grain_send",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.testing.send",
+                    "name": "main_roar_send",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.testing.send",
+                    "name": "main_verb_send",
+                    "type": "internal"
+                },
+                {
+                    "path": "SimpleDualParametricEq.vst3",
+                    "uid": "SimpleDualParametricEq",
+                    "name": "SimpleDualParametricEq",
+                    "type": "vst3x"
+                },
+                {
+                    "path": "Moses.vst3",
+                    "uid": "Moses",
+                    "name": "Moses",
+                    "type": "vst3x"
+                }
+            ]
+        },
+        {
+            "name": "sampler",
+            "channels": 2,
+            "inputs": [],
+            "outputs": [
+                {
+                    "engine_bus": 0,
+                    "track_bus": 0
+                }
+            ],
+            "plugins": [
+                {
+                    "path": "SampleTower.vst3",
+                    "uid": "SampleTower",
+                    "name": "SampleTower",
+                    "type": "vst3x"
+                },
+                {
+                    "uid": "sushi.testing.gain",
+                    "name": "sampler_gain",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.testing.send",
+                    "name": "sampler_echo_send",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.testing.send",
+                    "name": "sampler_verb_send",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.testing.send",
+                    "name": "sampler_grain_send",
+                    "type": "internal"
+                }
+            ]
+        },
+        {
+            "name": "echo",
+            "channels": 2,
+            "inputs": [],
+            "outputs": [
+                {
+                    "engine_bus": 0,
+                    "track_bus": 0
+                }
+            ],
+            "plugins": [
+                {
+                    "uid": "sushi.testing.return",
+                    "name": "echo_return",
+                    "type": "internal"
+                },
+                {
+                    "path": "StrangeReturns.vst3",
+                    "uid": "Strange Returns",
+                    "name": "Strange Returns",
+                    "type": "vst3x"
+                },
+                {
+                    "uid": "sushi.testing.gain",
+                    "name": "echo_gain",
+                    "type": "internal"
+                }
+            ]
+        },
+        {
+            "name": "grain",
+            "channels": 2,
+            "inputs": [],
+            "outputs": [
+                {
+                    "engine_bus": 0,
+                    "track_bus": 0
+                }
+            ],
+            "plugins": [
+                {
+                    "uid": "sushi.testing.return",
+                    "name": "grain_return",
+                    "type": "internal"
+                },
+                {
+                    "path": "Graindr.vst3",
+                    "uid": "Graindr",
+                    "name": "Graindr",
+                    "type": "vst3x"
+                },
+                {
+                    "uid": "sushi.testing.gain",
+                    "name": "grain_gain",
+                    "type": "internal"
+                }
+            ]
+        },
+        {
+            "name": "subroar",
+            "channels": 2,
+            "inputs": [],
+            "outputs": [
+                {
+                    "engine_bus": 0,
+                    "track_bus": 0
+                }
+            ],
+            "plugins": [
+                {
+                    "uid": "sushi.testing.return",
+                    "name": "roar_return",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.testing.gain",
+                    "name": "roar_in_gain",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.brickworks.multi_filter",
+                    "name": "roar_lowpass_filter",
+                    "type": "internal"
+                },
+                {
+                    "path": "Hamburger.vst3",
+                    "uid": "Hamburger",
+                    "name": "Hamburger",
+                    "type": "vst3x"
+                },
+                {
+                    "path": "MVerb-vst.so",
+                    "name": "roar_verb",
+                    "type": "vst2x"
+                },
+                {
+                    "uid": "sushi.testing.gain",
+                    "name": "roar_out_gain",
+                    "type": "internal"
+                }
+            ]
+        },
+        {
+            "name": "reverb",
+            "channels": 2,
+            "inputs": [],
+            "outputs": [
+                {
+                    "engine_bus": 0,
+                    "track_bus": 0
+                }
+            ],
+            "plugins": [
+                {
+                    "uid": "sushi.testing.return",
+                    "name": "verb_return",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.brickworks.multi_filter",
+                    "name": "reverb_highpass_filter",
+                    "type": "internal"
+                },
+                {
+                    "uid": "sushi.brickworks.multi_filter",
+                    "name": "reverb_lowpass_filter",
+                    "type": "internal"
+                },
+                {
+                    "path": "MVerb-vst.so",
+                    "uid": "MVerb",
+                    "name": "reverb_processor",
+                    "type": "vst2x"
+                },
+                {
+                    "path": "JuceAutoFilter.vst3",
+                    "uid": "JuceAutoFilter",
+                    "name": "JuceAutoFilter",
+                    "type": "vst3x"
+                },
+                {
+                    "uid": "sushi.testing.gain",
+                    "name": "verb_gain",
+                    "type": "internal"
+                }
+            ]
+        }
+    ],
+    "initial_state": [
+        {
+            "processor": "main_echo_send",
+            "properties": {
+                "destination_name": "echo_return"
+            },
+            "parameters": {
+                "gain": 0.0
+            }
+        },
+        {
+            "processor": "sampler_echo_send",
+            "properties": {
+                "destination_name": "echo_return"
+            },
+            "parameters": {
+                "gain": 0.0
+            }
+        },
+        {
+            "processor": "main_grain_send",
+            "properties": {
+                "destination_name": "grain_return"
+            },
+            "parameters": {
+                "gain": 0.0
+            }
+        },
+        {
+            "processor": "sampler_grain_send",
+            "properties": {
+                "destination_name": "grain_return"
+            },
+            "parameters": {
+                "gain": 0.0
+            }
+        },
+        {
+            "processor": "main_roar_send",
+            "properties": {
+                "destination_name": "roar_return"
+            },
+            "parameters": {
+                "gain": 0.0
+            }
+        },
+        {
+            "processor": "main_verb_send",
+            "properties": {
+                "destination_name": "verb_return"
+            },
+            "parameters": {
+                "gain": 0.0
+            }
+        },
+        {
+            "processor": "sampler_verb_send",
+            "properties": {
+                "destination_name": "verb_return"
+            },
+            "parameters": {
+                "gain": 0.0
+            }
+        },
+        {
+            "processor": "Strange Returns",
+            "parameters": {
+                "Dry/Wet": 1.0
+            }
+        },
+        {
+            "processor": "Graindr",
+            "parameters": {
+                "Dry/Wet": 1.0,
+                "PS 2 In": 0.0,
+                "Feedback_2": 0.0
+            }
+        },
+        {
+            "processor": "Hamburger",
+            "parameters": {
+                "Mix": 1.0
+            }
+        },
+        {
+            "processor": "reverb_processor",
+            "parameters": {
+                "Mix": 1.0
+            }
+        }
+    ],
+    "midi": {
+        "track_connections" : [
+            {
+                "port" : 0,
+                "channel" : 0,
+                "track" : "sampler",
+                "raw_midi" : false
+            }
+        ],
+        "cc_mappings" : [
+            {
+                "port": 0,
+                "channel": 0,
+                "cc_number": 0,
+                "plugin_name": "SampleTower",
+                "parameter_name": "Speed",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 0,
+                "cc_number": 1,
+                "plugin_name": "sampler_verb_send",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 0,
+                "cc_number": 2,
+                "plugin_name": "sampler_echo_send",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 0,
+                "cc_number": 3,
+                "plugin_name": "sampler_grain_send",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 0,
+                "cc_number": 4,
+                "plugin_name": "SampleTower",
+                "parameter_name": "Gain",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 1,
+                "cc_number": 0,
+                "plugin_name": "SimpleDualParametricEq",
+                "parameter_name": "EQ1 On",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 1,
+                "cc_number": 1,
+                "plugin_name": "SimpleDualParametricEq",
+                "parameter_name": "EQ1 Frequency",
+                "min_range": 0.0,
+                "max_range": 0.40
+            },
+            {
+                "port": 0,
+                "channel": 1,
+                "cc_number": 2,
+                "plugin_name": "SimpleDualParametricEq",
+                "parameter_name": "EQ1 Gain",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 1,
+                "cc_number": 3,
+                "plugin_name": "SimpleDualParametricEq",
+                "parameter_name": "EQ1 Q",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 1,
+                "cc_number": 4,
+                "plugin_name": "SimpleDualParametricEq",
+                "parameter_name": "EQ2 On",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 1,
+                "cc_number": 5,
+                "plugin_name": "SimpleDualParametricEq",
+                "parameter_name": "EQ2 Frequency",
+                "min_range": 0.30,
+                "max_range": 0.70
+            },
+            {
+                "port": 0,
+                "channel": 1,
+                "cc_number": 6,
+                "plugin_name": "SimpleDualParametricEq",
+                "parameter_name": "EQ2 Gain",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 1,
+                "cc_number": 7,
+                "plugin_name": "SimpleDualParametricEq",
+                "parameter_name": "EQ2 Q",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 0,
+                "plugin_name": "Moses",
+                "parameter_name": "Kill band 0",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 1,
+                "plugin_name": "Moses",
+                "parameter_name": "Attack Time 0",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 2,
+                "plugin_name": "Moses",
+                "parameter_name": "Release Time 0",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 3,
+                "plugin_name": "Moses",
+                "parameter_name": "Threshold 0",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 4,
+                "plugin_name": "Moses",
+                "parameter_name": "MakUp Gain 0",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 5,
+                "plugin_name": "Moses",
+                "parameter_name": "Kill band 1",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 6,
+                "plugin_name": "Moses",
+                "parameter_name": "Attack Time 1",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 7,
+                "plugin_name": "Moses",
+                "parameter_name": "Release Time 1",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 8,
+                "plugin_name": "Moses",
+                "parameter_name": "Threshold 1",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 9,
+                "plugin_name": "Moses",
+                "parameter_name": "MakUp Gain 1",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 10,
+                "plugin_name": "Moses",
+                "parameter_name": "Kill band 2",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 11,
+                "plugin_name": "Moses",
+                "parameter_name": "Attack Time 2",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 12,
+                "plugin_name": "Moses",
+                "parameter_name": "Release Time 2",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 13,
+                "plugin_name": "Moses",
+                "parameter_name": "Threshold 2",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 14,
+                "plugin_name": "Moses",
+                "parameter_name": "MakUp Gain 2",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 15,
+                "plugin_name": "Moses",
+                "parameter_name": "Kill band 3",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 16,
+                "plugin_name": "Moses",
+                "parameter_name": "Attack Time 3",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 17,
+                "plugin_name": "Moses",
+                "parameter_name": "Release Time 3",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 18,
+                "plugin_name": "Moses",
+                "parameter_name": "Threshold 3",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 2,
+                "cc_number": 19,
+                "plugin_name": "Moses",
+                "parameter_name": "MakUp Gain 3",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 0,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "Mod Rate",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 1,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "Mod Depth",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 2,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "Time",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 3,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "Feedback",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 4,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "Sample Rate Reduction",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 5,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "Sample Rate Reduction",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 7,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "LPF Resonance",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 8,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "LPF Cutoff",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 9,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "Stereo Spread",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 10,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "Noise Level",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 11,
+                "plugin_name": "echo_gain",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 3,
+                "cc_number": 13,
+                "plugin_name": "Strange Returns",
+                "parameter_name": "Type",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 0,
+                "plugin_name": "Graindr",
+                "parameter_name": "Pitch Shift",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 1,
+                "plugin_name": "Graindr",
+                "parameter_name": "Fine Tune",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 2,
+                "plugin_name": "Graindr",
+                "parameter_name": "Grain Size",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 3,
+                "plugin_name": "Graindr",
+                "parameter_name": "Texture",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 4,
+                "plugin_name": "Graindr",
+                "parameter_name": "Strech",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 5,
+                "plugin_name": "Graindr",
+                "parameter_name": "Feedback",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 6,
+                "plugin_name": "Graindr",
+                "parameter_name": "Shimmer",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 7,
+                "plugin_name": "Graindr",
+                "parameter_name": "Hi Cut",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 8,
+                "plugin_name": "grain_gain",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 9,
+                "plugin_name": "Graindr",
+                "parameter_name": "Tone",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 4,
+                "cc_number": 10,
+                "plugin_name": "Graindr",
+                "parameter_name": "Playback",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 5,
+                "cc_number": 0,
+                "plugin_name": "input_gain",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 5,
+                "cc_number": 1,
+                "plugin_name": "main_echo_send",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 5,
+                "cc_number": 2,
+                "plugin_name": "main_grain_send",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 5,
+                "cc_number": 3,
+                "plugin_name": "main_roar_send",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 5,
+                "cc_number": 4,
+                "plugin_name": "main_verb_send",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 0,
+                "plugin_name": "roar_in_gain",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 1,
+                "plugin_name": "roar_lowpass_filter",
+                "parameter_name": "frequency",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 2,
+                "plugin_name": "Hamburger",
+                "parameter_name": "Grill Fold",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 3,
+                "plugin_name": "Hamburger",
+                "parameter_name": "Emphasis Low Frequency",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 4,
+                "plugin_name": "Hamburger",
+                "parameter_name": "Emphasis Low Gain",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 5,
+                "plugin_name": "roar_verb",
+                "parameter_name": "Mix",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 6,
+                "plugin_name": "roar_verb",
+                "parameter_name": "Size",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 7,
+                "plugin_name": "roar_verb",
+                "parameter_name": "Decay",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 7,
+                "plugin_name": "roar_out_gain",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            },
+            {
+                "port": 0,
+                "channel": 7,
+                "cc_number": 0,
+                "plugin_name": "reverb_highpass_filter",
+                "parameter_name": "frequency",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 7,
+                "cc_number": 1,
+                "plugin_name": "reverb_lowpass_filter",
+                "parameter_name": "frequency",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 7,
+                "cc_number": 2,
+                "plugin_name": "reverb_processor",
+                "parameter_name": "Decay",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 7,
+                "cc_number": 3,
+                "plugin_name": "reverb_processor",
+                "parameter_name": "Predelay",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 7,
+                "cc_number": 4,
+                "plugin_name": "reverb_processor",
+                "parameter_name": "Size",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 7,
+                "cc_number": 5,
+                "plugin_name": "JuceAutoFilter",
+                "parameter_name": "Filter Resonance",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 7,
+                "cc_number": 6,
+                "plugin_name": "JuceAutoFilter",
+                "parameter_name": "Filter Frequency",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 7,
+                "cc_number": 7,
+                "plugin_name": "JuceAutoFilter",
+                "parameter_name": "LFO Depth",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 7,
+                "cc_number": 8,
+                "plugin_name": "JuceAutoFilter",
+                "parameter_name": "LFO Rate",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 7,
+                "cc_number": 8,
+                "plugin_name": "verb_gain",
+                "parameter_name": "gain",
+                "min_range": 0.0,
+                "max_range": 0.83
+            }
+        ]
+    }
+}

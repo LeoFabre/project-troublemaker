@@ -1,0 +1,1764 @@
+{
+    "plugins": [
+        {
+            "name": "input_gain",
+            "label": "Gain",
+            "processor_id": 1,
+            "parent_track_id": 0,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/input_gain/gain",
+                    "id": 0
+                }
+            ]
+        },
+        {
+            "name": "main_echo_send",
+            "label": "Send",
+            "processor_id": 2,
+            "parent_track_id": 0,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/main_echo_send/gain",
+                    "id": 0
+                },
+                {
+                    "name": "channel_count",
+                    "label": "Channel count",
+                    "osc_path": "/parameter/main_echo_send/channel_count",
+                    "id": 1
+                },
+                {
+                    "name": "start_channel",
+                    "label": "Start channel",
+                    "osc_path": "/parameter/main_echo_send/start_channel",
+                    "id": 2
+                },
+                {
+                    "name": "dest_channel",
+                    "label": "Destination channel",
+                    "osc_path": "/parameter/main_echo_send/dest_channel",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "main_grain_send",
+            "label": "Send",
+            "processor_id": 3,
+            "parent_track_id": 0,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/main_grain_send/gain",
+                    "id": 0
+                },
+                {
+                    "name": "channel_count",
+                    "label": "Channel count",
+                    "osc_path": "/parameter/main_grain_send/channel_count",
+                    "id": 1
+                },
+                {
+                    "name": "start_channel",
+                    "label": "Start channel",
+                    "osc_path": "/parameter/main_grain_send/start_channel",
+                    "id": 2
+                },
+                {
+                    "name": "dest_channel",
+                    "label": "Destination channel",
+                    "osc_path": "/parameter/main_grain_send/dest_channel",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "main_roar_send",
+            "label": "Send",
+            "processor_id": 4,
+            "parent_track_id": 0,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/main_roar_send/gain",
+                    "id": 0
+                },
+                {
+                    "name": "channel_count",
+                    "label": "Channel count",
+                    "osc_path": "/parameter/main_roar_send/channel_count",
+                    "id": 1
+                },
+                {
+                    "name": "start_channel",
+                    "label": "Start channel",
+                    "osc_path": "/parameter/main_roar_send/start_channel",
+                    "id": 2
+                },
+                {
+                    "name": "dest_channel",
+                    "label": "Destination channel",
+                    "osc_path": "/parameter/main_roar_send/dest_channel",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "main_verb_send",
+            "label": "Send",
+            "processor_id": 5,
+            "parent_track_id": 0,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/main_verb_send/gain",
+                    "id": 0
+                },
+                {
+                    "name": "channel_count",
+                    "label": "Channel count",
+                    "osc_path": "/parameter/main_verb_send/channel_count",
+                    "id": 1
+                },
+                {
+                    "name": "start_channel",
+                    "label": "Start channel",
+                    "osc_path": "/parameter/main_verb_send/start_channel",
+                    "id": 2
+                },
+                {
+                    "name": "dest_channel",
+                    "label": "Destination channel",
+                    "osc_path": "/parameter/main_verb_send/dest_channel",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "SimpleDualParametricEq",
+            "label": "SimpleDualParametricEq",
+            "processor_id": 6,
+            "parent_track_id": 0,
+            "parameters": [
+                {
+                    "name": "EQ1 Frequency",
+                    "label": "EQ1 Frequency",
+                    "osc_path": "/parameter/SimpleDualParametricEq/EQ1_Frequency",
+                    "id": 360912242
+                },
+                {
+                    "name": "EQ1 Gain",
+                    "label": "EQ1 Gain",
+                    "osc_path": "/parameter/SimpleDualParametricEq/EQ1_Gain",
+                    "id": 360925817
+                },
+                {
+                    "name": "EQ1 Q",
+                    "label": "EQ1 Q",
+                    "osc_path": "/parameter/SimpleDualParametricEq/EQ1_Q",
+                    "id": 66186135
+                },
+                {
+                    "name": "EQ1 On",
+                    "label": "EQ1 On",
+                    "osc_path": "/parameter/SimpleDualParametricEq/EQ1_On",
+                    "id": 2051770201
+                },
+                {
+                    "name": "EQ2 Frequency",
+                    "label": "EQ2 Frequency",
+                    "osc_path": "/parameter/SimpleDualParametricEq/EQ2_Frequency",
+                    "id": 389541393
+                },
+                {
+                    "name": "EQ2 Gain",
+                    "label": "EQ2 Gain",
+                    "osc_path": "/parameter/SimpleDualParametricEq/EQ2_Gain",
+                    "id": 389554968
+                },
+                {
+                    "name": "EQ2 Q",
+                    "label": "EQ2 Q",
+                    "osc_path": "/parameter/SimpleDualParametricEq/EQ2_Q",
+                    "id": 66187096
+                },
+                {
+                    "name": "EQ2 On",
+                    "label": "EQ2 On",
+                    "osc_path": "/parameter/SimpleDualParametricEq/EQ2_On",
+                    "id": 2051799992
+                }
+            ]
+        },
+        {
+            "name": "Moses",
+            "label": "Moses",
+            "processor_id": 7,
+            "parent_track_id": 0,
+            "parameters": [
+                {
+                    "name": "Crossover 0",
+                    "label": "Crossover 0",
+                    "osc_path": "/parameter/Moses/Crossover_0",
+                    "id": 394259868
+                },
+                {
+                    "name": "Crossover 1",
+                    "label": "Crossover 1",
+                    "osc_path": "/parameter/Moses/Crossover_1",
+                    "id": 394259869
+                },
+                {
+                    "name": "Crossover 2",
+                    "label": "Crossover 2",
+                    "osc_path": "/parameter/Moses/Crossover_2",
+                    "id": 394259870
+                },
+                {
+                    "name": "Threshold 0",
+                    "label": "Threshold 0",
+                    "osc_path": "/parameter/Moses/Threshold_0",
+                    "id": 1482336549
+                },
+                {
+                    "name": "Knee Width 0",
+                    "label": "Knee Width 0",
+                    "osc_path": "/parameter/Moses/Knee_Width_0",
+                    "id": 102193997
+                },
+                {
+                    "name": "Attack Time 0",
+                    "label": "Attack Time 0",
+                    "osc_path": "/parameter/Moses/Attack_Time_0",
+                    "id": 1472125672
+                },
+                {
+                    "name": "Release Time 0",
+                    "label": "Release Time 0",
+                    "osc_path": "/parameter/Moses/Release_Time_0",
+                    "id": 1596184841
+                },
+                {
+                    "name": "Ratio 0",
+                    "label": "Ratio 0",
+                    "osc_path": "/parameter/Moses/Ratio_0",
+                    "id": 1209381253
+                },
+                {
+                    "name": "MakUp Gain 0",
+                    "label": "MakUp Gain 0",
+                    "osc_path": "/parameter/Moses/MakUp_Gain_0",
+                    "id": 1028372712
+                },
+                {
+                    "name": "Bypass compression on band 0",
+                    "label": "Bypass compression on band 0",
+                    "osc_path": "/parameter/Moses/Bypass_compression_on_band_0",
+                    "id": 351613000
+                },
+                {
+                    "name": "Kill band 0",
+                    "label": "Kill band 0",
+                    "osc_path": "/parameter/Moses/Kill_band_0",
+                    "id": 102051986
+                },
+                {
+                    "name": "Solo band 0",
+                    "label": "Solo band 0",
+                    "osc_path": "/parameter/Moses/Solo_band_0",
+                    "id": 109618993
+                },
+                {
+                    "name": "Threshold 1",
+                    "label": "Threshold 1",
+                    "osc_path": "/parameter/Moses/Threshold_1",
+                    "id": 1482336550
+                },
+                {
+                    "name": "Knee Width 1",
+                    "label": "Knee Width 1",
+                    "osc_path": "/parameter/Moses/Knee_Width_1",
+                    "id": 102193998
+                },
+                {
+                    "name": "Attack Time 1",
+                    "label": "Attack Time 1",
+                    "osc_path": "/parameter/Moses/Attack_Time_1",
+                    "id": 1472125673
+                },
+                {
+                    "name": "Release Time 1",
+                    "label": "Release Time 1",
+                    "osc_path": "/parameter/Moses/Release_Time_1",
+                    "id": 1596184842
+                },
+                {
+                    "name": "Ratio 1",
+                    "label": "Ratio 1",
+                    "osc_path": "/parameter/Moses/Ratio_1",
+                    "id": 1209381254
+                },
+                {
+                    "name": "MakUp Gain 1",
+                    "label": "MakUp Gain 1",
+                    "osc_path": "/parameter/Moses/MakUp_Gain_1",
+                    "id": 1028372713
+                },
+                {
+                    "name": "Bypass compression on band 1",
+                    "label": "Bypass compression on band 1",
+                    "osc_path": "/parameter/Moses/Bypass_compression_on_band_1",
+                    "id": 351613001
+                },
+                {
+                    "name": "Kill band 1",
+                    "label": "Kill band 1",
+                    "osc_path": "/parameter/Moses/Kill_band_1",
+                    "id": 102051987
+                },
+                {
+                    "name": "Solo band 1",
+                    "label": "Solo band 1",
+                    "osc_path": "/parameter/Moses/Solo_band_1",
+                    "id": 109618994
+                },
+                {
+                    "name": "Threshold 2",
+                    "label": "Threshold 2",
+                    "osc_path": "/parameter/Moses/Threshold_2",
+                    "id": 1482336551
+                },
+                {
+                    "name": "Knee Width 2",
+                    "label": "Knee Width 2",
+                    "osc_path": "/parameter/Moses/Knee_Width_2",
+                    "id": 102193999
+                },
+                {
+                    "name": "Attack Time 2",
+                    "label": "Attack Time 2",
+                    "osc_path": "/parameter/Moses/Attack_Time_2",
+                    "id": 1472125674
+                },
+                {
+                    "name": "Release Time 2",
+                    "label": "Release Time 2",
+                    "osc_path": "/parameter/Moses/Release_Time_2",
+                    "id": 1596184843
+                },
+                {
+                    "name": "Ratio 2",
+                    "label": "Ratio 2",
+                    "osc_path": "/parameter/Moses/Ratio_2",
+                    "id": 1209381255
+                },
+                {
+                    "name": "MakUp Gain 2",
+                    "label": "MakUp Gain 2",
+                    "osc_path": "/parameter/Moses/MakUp_Gain_2",
+                    "id": 1028372714
+                },
+                {
+                    "name": "Bypass compression on band 2",
+                    "label": "Bypass compression on band 2",
+                    "osc_path": "/parameter/Moses/Bypass_compression_on_band_2",
+                    "id": 351613002
+                },
+                {
+                    "name": "Kill band 2",
+                    "label": "Kill band 2",
+                    "osc_path": "/parameter/Moses/Kill_band_2",
+                    "id": 102051988
+                },
+                {
+                    "name": "Solo band 2",
+                    "label": "Solo band 2",
+                    "osc_path": "/parameter/Moses/Solo_band_2",
+                    "id": 109618995
+                },
+                {
+                    "name": "Threshold 3",
+                    "label": "Threshold 3",
+                    "osc_path": "/parameter/Moses/Threshold_3",
+                    "id": 1482336552
+                },
+                {
+                    "name": "Knee Width 3",
+                    "label": "Knee Width 3",
+                    "osc_path": "/parameter/Moses/Knee_Width_3",
+                    "id": 102194000
+                },
+                {
+                    "name": "Attack Time 3",
+                    "label": "Attack Time 3",
+                    "osc_path": "/parameter/Moses/Attack_Time_3",
+                    "id": 1472125675
+                },
+                {
+                    "name": "Release Time 3",
+                    "label": "Release Time 3",
+                    "osc_path": "/parameter/Moses/Release_Time_3",
+                    "id": 1596184844
+                },
+                {
+                    "name": "Ratio 3",
+                    "label": "Ratio 3",
+                    "osc_path": "/parameter/Moses/Ratio_3",
+                    "id": 1209381256
+                },
+                {
+                    "name": "MakUp Gain 3",
+                    "label": "MakUp Gain 3",
+                    "osc_path": "/parameter/Moses/MakUp_Gain_3",
+                    "id": 1028372715
+                },
+                {
+                    "name": "Bypass compression on band 3",
+                    "label": "Bypass compression on band 3",
+                    "osc_path": "/parameter/Moses/Bypass_compression_on_band_3",
+                    "id": 351613003
+                },
+                {
+                    "name": "Kill band 3",
+                    "label": "Kill band 3",
+                    "osc_path": "/parameter/Moses/Kill_band_3",
+                    "id": 102051989
+                },
+                {
+                    "name": "Solo band 3",
+                    "label": "Solo band 3",
+                    "osc_path": "/parameter/Moses/Solo_band_3",
+                    "id": 109618996
+                }
+            ]
+        },
+        {
+            "name": "SampleTower",
+            "label": "SampleTower",
+            "processor_id": 9,
+            "parent_track_id": 8,
+            "parameters": [
+                {
+                    "name": "Speed",
+                    "label": "Speed",
+                    "osc_path": "/parameter/SampleTower/Speed",
+                    "id": 79104039
+                },
+                {
+                    "name": "Gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/SampleTower/Gain",
+                    "id": 2179967
+                },
+                {
+                    "name": "Loop 1",
+                    "label": "Loop 1",
+                    "osc_path": "/parameter/SampleTower/Loop_1",
+                    "id": 103723350
+                },
+                {
+                    "name": "Loop 2",
+                    "label": "Loop 2",
+                    "osc_path": "/parameter/SampleTower/Loop_2",
+                    "id": 103723351
+                },
+                {
+                    "name": "Loop 3",
+                    "label": "Loop 3",
+                    "osc_path": "/parameter/SampleTower/Loop_3",
+                    "id": 103723352
+                },
+                {
+                    "name": "Loop 4",
+                    "label": "Loop 4",
+                    "osc_path": "/parameter/SampleTower/Loop_4",
+                    "id": 103723353
+                },
+                {
+                    "name": "Loop 5",
+                    "label": "Loop 5",
+                    "osc_path": "/parameter/SampleTower/Loop_5",
+                    "id": 103723354
+                },
+                {
+                    "name": "Loop 6",
+                    "label": "Loop 6",
+                    "osc_path": "/parameter/SampleTower/Loop_6",
+                    "id": 103723355
+                },
+                {
+                    "name": "Loop 7",
+                    "label": "Loop 7",
+                    "osc_path": "/parameter/SampleTower/Loop_7",
+                    "id": 103723356
+                },
+                {
+                    "name": "Loop 8",
+                    "label": "Loop 8",
+                    "osc_path": "/parameter/SampleTower/Loop_8",
+                    "id": 103723357
+                },
+                {
+                    "name": "Loop 9",
+                    "label": "Loop 9",
+                    "osc_path": "/parameter/SampleTower/Loop_9",
+                    "id": 103723358
+                },
+                {
+                    "name": "Loop 10",
+                    "label": "Loop 10",
+                    "osc_path": "/parameter/SampleTower/Loop_10",
+                    "id": 1067940250
+                },
+                {
+                    "name": "Loop 11",
+                    "label": "Loop 11",
+                    "osc_path": "/parameter/SampleTower/Loop_11",
+                    "id": 1067940251
+                }
+            ]
+        },
+        {
+            "name": "sampler_gain",
+            "label": "Gain",
+            "processor_id": 10,
+            "parent_track_id": 8,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/sampler_gain/gain",
+                    "id": 0
+                }
+            ]
+        },
+        {
+            "name": "sampler_echo_send",
+            "label": "Send",
+            "processor_id": 11,
+            "parent_track_id": 8,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/sampler_echo_send/gain",
+                    "id": 0
+                },
+                {
+                    "name": "channel_count",
+                    "label": "Channel count",
+                    "osc_path": "/parameter/sampler_echo_send/channel_count",
+                    "id": 1
+                },
+                {
+                    "name": "start_channel",
+                    "label": "Start channel",
+                    "osc_path": "/parameter/sampler_echo_send/start_channel",
+                    "id": 2
+                },
+                {
+                    "name": "dest_channel",
+                    "label": "Destination channel",
+                    "osc_path": "/parameter/sampler_echo_send/dest_channel",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "sampler_verb_send",
+            "label": "Send",
+            "processor_id": 12,
+            "parent_track_id": 8,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/sampler_verb_send/gain",
+                    "id": 0
+                },
+                {
+                    "name": "channel_count",
+                    "label": "Channel count",
+                    "osc_path": "/parameter/sampler_verb_send/channel_count",
+                    "id": 1
+                },
+                {
+                    "name": "start_channel",
+                    "label": "Start channel",
+                    "osc_path": "/parameter/sampler_verb_send/start_channel",
+                    "id": 2
+                },
+                {
+                    "name": "dest_channel",
+                    "label": "Destination channel",
+                    "osc_path": "/parameter/sampler_verb_send/dest_channel",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "sampler_grain_send",
+            "label": "Send",
+            "processor_id": 13,
+            "parent_track_id": 8,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/sampler_grain_send/gain",
+                    "id": 0
+                },
+                {
+                    "name": "channel_count",
+                    "label": "Channel count",
+                    "osc_path": "/parameter/sampler_grain_send/channel_count",
+                    "id": 1
+                },
+                {
+                    "name": "start_channel",
+                    "label": "Start channel",
+                    "osc_path": "/parameter/sampler_grain_send/start_channel",
+                    "id": 2
+                },
+                {
+                    "name": "dest_channel",
+                    "label": "Destination channel",
+                    "osc_path": "/parameter/sampler_grain_send/dest_channel",
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "name": "echo_return",
+            "label": "Return",
+            "processor_id": 15,
+            "parent_track_id": 14,
+            "parameters": []
+        },
+        {
+            "name": "Strange Returns",
+            "label": "Strange Returns",
+            "processor_id": 16,
+            "parent_track_id": 14,
+            "parameters": [
+                {
+                    "name": "Time",
+                    "label": "Time",
+                    "osc_path": "/parameter/Strange_Returns/Time",
+                    "id": 3560141
+                },
+                {
+                    "name": "Feedback",
+                    "label": "Feedback",
+                    "osc_path": "/parameter/Strange_Returns/Feedback",
+                    "id": 1955982213
+                },
+                {
+                    "name": "Dry/Wet",
+                    "label": "Dry/Wet",
+                    "osc_path": "/parameter/Strange_Returns/DryWet",
+                    "id": 824404411
+                },
+                {
+                    "name": "Type",
+                    "label": "Type",
+                    "osc_path": "/parameter/Strange_Returns/Type",
+                    "id": 1128817612
+                },
+                {
+                    "name": "Effects Routing",
+                    "label": "Effects Routing",
+                    "osc_path": "/parameter/Strange_Returns/Effects_Routing",
+                    "id": 2065152356
+                },
+                {
+                    "name": "Mod Rate",
+                    "label": "Mod Rate",
+                    "osc_path": "/parameter/Strange_Returns/Mod_Rate",
+                    "id": 1226381058
+                },
+                {
+                    "name": "Mod Depth",
+                    "label": "Mod Depth",
+                    "osc_path": "/parameter/Strange_Returns/Mod_Depth",
+                    "id": 1497777377
+                },
+                {
+                    "name": "Mod Wave",
+                    "label": "Mod Wave",
+                    "osc_path": "/parameter/Strange_Returns/Mod_Wave",
+                    "id": 1226530075
+                },
+                {
+                    "name": "Noise Level",
+                    "label": "Noise Level",
+                    "osc_path": "/parameter/Strange_Returns/Noise_Level",
+                    "id": 1354425482
+                },
+                {
+                    "name": "Noise Type",
+                    "label": "Noise Type",
+                    "osc_path": "/parameter/Strange_Returns/Noise_Type",
+                    "id": 1013779828
+                },
+                {
+                    "name": "Flip Phase",
+                    "label": "Flip Phase",
+                    "osc_path": "/parameter/Strange_Returns/Flip_Phase",
+                    "id": 1550341390
+                },
+                {
+                    "name": "Bit Depth",
+                    "label": "Bit Depth",
+                    "osc_path": "/parameter/Strange_Returns/Bit_Depth",
+                    "id": 1828736770
+                },
+                {
+                    "name": "Sample Rate Reduction",
+                    "label": "Sample Rate Reduction",
+                    "osc_path": "/parameter/Strange_Returns/Sample_Rate_Reduction",
+                    "id": 1411093613
+                },
+                {
+                    "name": "Stereo Spread",
+                    "label": "Stereo Spread",
+                    "osc_path": "/parameter/Strange_Returns/Stereo_Spread",
+                    "id": 1339801425
+                },
+                {
+                    "name": "LPF Cutoff",
+                    "label": "LPF Cutoff",
+                    "osc_path": "/parameter/Strange_Returns/LPF_Cutoff",
+                    "id": 203024879
+                },
+                {
+                    "name": "LPF Resonance",
+                    "label": "LPF Resonance",
+                    "osc_path": "/parameter/Strange_Returns/LPF_Resonance",
+                    "id": 3328303
+                },
+                {
+                    "name": "LPF Position",
+                    "label": "LPF Position",
+                    "osc_path": "/parameter/Strange_Returns/LPF_Position",
+                    "id": 1951276715
+                },
+                {
+                    "name": "BitMod Level",
+                    "label": "BitMod Level",
+                    "osc_path": "/parameter/Strange_Returns/BitMod_Level",
+                    "id": 2122421753
+                },
+                {
+                    "name": "BitMod Operation",
+                    "label": "BitMod Operation",
+                    "osc_path": "/parameter/Strange_Returns/BitMod_Operation",
+                    "id": 1566477660
+                },
+                {
+                    "name": "BitMod Operands",
+                    "label": "BitMod Operands",
+                    "osc_path": "/parameter/Strange_Returns/BitMod_Operands",
+                    "id": 189072949
+                }
+            ]
+        },
+        {
+            "name": "echo_gain",
+            "label": "Gain",
+            "processor_id": 17,
+            "parent_track_id": 14,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/echo_gain/gain",
+                    "id": 0
+                }
+            ]
+        },
+        {
+            "name": "grain_return",
+            "label": "Return",
+            "processor_id": 19,
+            "parent_track_id": 18,
+            "parameters": []
+        },
+        {
+            "name": "Graindr",
+            "label": "Graindr",
+            "processor_id": 20,
+            "parent_track_id": 18,
+            "parameters": [
+                {
+                    "name": "Dry/Wet",
+                    "label": "Dry/Wet",
+                    "osc_path": "/parameter/Graindr/DryWet",
+                    "id": 824404411
+                },
+                {
+                    "name": "PS 1 In",
+                    "label": "PS 1 In",
+                    "osc_path": "/parameter/Graindr/PS_1_In",
+                    "id": 1003045641
+                },
+                {
+                    "name": "PS 2 In",
+                    "label": "PS 2 In",
+                    "osc_path": "/parameter/Graindr/PS_2_In",
+                    "id": 806532136
+                },
+                {
+                    "name": "PS Balance",
+                    "label": "PS Balance",
+                    "osc_path": "/parameter/Graindr/PS_Balance",
+                    "id": 1461239641
+                },
+                {
+                    "name": "Pitch Shift",
+                    "label": "Pitch Shift",
+                    "osc_path": "/parameter/Graindr/Pitch_Shift",
+                    "id": 842462800
+                },
+                {
+                    "name": "Fine Tune",
+                    "label": "Fine Tune",
+                    "osc_path": "/parameter/Graindr/Fine_Tune",
+                    "id": 496117120
+                },
+                {
+                    "name": "Grain Size",
+                    "label": "Grain Size",
+                    "osc_path": "/parameter/Graindr/Grain_Size",
+                    "id": 677563438
+                },
+                {
+                    "name": "Texture",
+                    "label": "Texture",
+                    "osc_path": "/parameter/Graindr/Texture",
+                    "id": 1806655149
+                },
+                {
+                    "name": "Strech",
+                    "label": "Strech",
+                    "osc_path": "/parameter/Graindr/Strech",
+                    "id": 1013140455
+                },
+                {
+                    "name": "Feedback",
+                    "label": "Feedback",
+                    "osc_path": "/parameter/Graindr/Feedback",
+                    "id": 982881331
+                },
+                {
+                    "name": "Shimmer",
+                    "label": "Shimmer",
+                    "osc_path": "/parameter/Graindr/Shimmer",
+                    "id": 990969491
+                },
+                {
+                    "name": "Hi Cut",
+                    "label": "Hi Cut",
+                    "osc_path": "/parameter/Graindr/Hi_Cut",
+                    "id": 484279982
+                },
+                {
+                    "name": "Playback",
+                    "label": "Playback",
+                    "osc_path": "/parameter/Graindr/Playback",
+                    "id": 939666692
+                },
+                {
+                    "name": "Tone",
+                    "label": "Tone",
+                    "osc_path": "/parameter/Graindr/Tone",
+                    "id": 155716730
+                },
+                {
+                    "name": "Pitch Shift_2",
+                    "label": "Pitch Shift",
+                    "osc_path": "/parameter/Graindr/Pitch_Shift_2",
+                    "id": 1192995089
+                },
+                {
+                    "name": "Fine Tune_2",
+                    "label": "Fine Tune",
+                    "osc_path": "/parameter/Graindr/Fine_Tune_2",
+                    "id": 836146305
+                },
+                {
+                    "name": "Grain Size_2",
+                    "label": "Grain Size",
+                    "osc_path": "/parameter/Graindr/Grain_Size_2",
+                    "id": 481049933
+                },
+                {
+                    "name": "Texture_2",
+                    "label": "Texture",
+                    "osc_path": "/parameter/Graindr/Texture_2",
+                    "id": 1401981836
+                },
+                {
+                    "name": "Strech_2",
+                    "label": "Strech",
+                    "osc_path": "/parameter/Graindr/Strech_2",
+                    "id": 1900644136
+                },
+                {
+                    "name": "Feedback_2",
+                    "label": "Feedback",
+                    "osc_path": "/parameter/Graindr/Feedback_2",
+                    "id": 1322910516
+                },
+                {
+                    "name": "Shimmer_2",
+                    "label": "Shimmer",
+                    "osc_path": "/parameter/Graindr/Shimmer_2",
+                    "id": 586296178
+                },
+                {
+                    "name": "Hi Cut_2",
+                    "label": "Hi Cut",
+                    "osc_path": "/parameter/Graindr/Hi_Cut_2",
+                    "id": 190876975
+                },
+                {
+                    "name": "Playback_2",
+                    "label": "Playback",
+                    "osc_path": "/parameter/Graindr/Playback_2",
+                    "id": 1068749411
+                },
+                {
+                    "name": "Tone_2",
+                    "label": "Tone",
+                    "osc_path": "/parameter/Graindr/Tone_2",
+                    "id": 495745915
+                },
+                {
+                    "name": "Mod Freq",
+                    "label": "Mod Freq",
+                    "osc_path": "/parameter/Graindr/Mod_Freq",
+                    "id": 878981399
+                },
+                {
+                    "name": "Mod Depth",
+                    "label": "Mod Depth",
+                    "osc_path": "/parameter/Graindr/Mod_Depth",
+                    "id": 1476396036
+                },
+                {
+                    "name": "Mod Wave",
+                    "label": "Mod Wave",
+                    "osc_path": "/parameter/Graindr/Mod_Wave",
+                    "id": 879472024
+                },
+                {
+                    "name": "Mod Stereo Phase Shift",
+                    "label": "Mod Stereo Phase Shift",
+                    "osc_path": "/parameter/Graindr/Mod_Stereo_Phase_Shift",
+                    "id": 1121337572
+                }
+            ]
+        },
+        {
+            "name": "grain_gain",
+            "label": "Gain",
+            "processor_id": 21,
+            "parent_track_id": 18,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/grain_gain/gain",
+                    "id": 0
+                }
+            ]
+        },
+        {
+            "name": "roar_return",
+            "label": "Return",
+            "processor_id": 23,
+            "parent_track_id": 22,
+            "parameters": []
+        },
+        {
+            "name": "roar_in_gain",
+            "label": "Gain",
+            "processor_id": 24,
+            "parent_track_id": 22,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/roar_in_gain/gain",
+                    "id": 0
+                }
+            ]
+        },
+        {
+            "name": "roar_lowpass_filter",
+            "label": "MultiFilter",
+            "processor_id": 25,
+            "parent_track_id": 22,
+            "parameters": [
+                {
+                    "name": "frequency",
+                    "label": "Frequency",
+                    "osc_path": "/parameter/roar_lowpass_filter/frequency",
+                    "id": 0
+                },
+                {
+                    "name": "Q",
+                    "label": "Q",
+                    "osc_path": "/parameter/roar_lowpass_filter/Q",
+                    "id": 1
+                },
+                {
+                    "name": "input_coeff",
+                    "label": "Input coefficient",
+                    "osc_path": "/parameter/roar_lowpass_filter/input_coeff",
+                    "id": 2
+                },
+                {
+                    "name": "lowpass_coeff",
+                    "label": "Lowpass coefficient",
+                    "osc_path": "/parameter/roar_lowpass_filter/lowpass_coeff",
+                    "id": 3
+                },
+                {
+                    "name": "bandpass_coeff",
+                    "label": "Bandpass coefficient",
+                    "osc_path": "/parameter/roar_lowpass_filter/bandpass_coeff",
+                    "id": 4
+                },
+                {
+                    "name": "highpass_coeff",
+                    "label": "Highpass coefficient",
+                    "osc_path": "/parameter/roar_lowpass_filter/highpass_coeff",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "Hamburger",
+            "label": "Hamburger",
+            "processor_id": 26,
+            "parent_track_id": 22,
+            "parameters": [
+                {
+                    "name": "Input Gain",
+                    "label": "Input Gain",
+                    "osc_path": "/parameter/Hamburger/Input_Gain",
+                    "id": 1706566249
+                },
+                {
+                    "name": "Out Gain",
+                    "label": "Out Gain",
+                    "osc_path": "/parameter/Hamburger/Out_Gain",
+                    "id": 873230368
+                },
+                {
+                    "name": "Mix",
+                    "label": "Mix",
+                    "osc_path": "/parameter/Hamburger/Mix",
+                    "id": 108124
+                },
+                {
+                    "name": "Grill Saturation",
+                    "label": "Grill Saturation",
+                    "osc_path": "/parameter/Hamburger/Grill_Saturation",
+                    "id": 1322685130
+                },
+                {
+                    "name": "Grill Diode",
+                    "label": "Grill Diode",
+                    "osc_path": "/parameter/Hamburger/Grill_Diode",
+                    "id": 95590027
+                },
+                {
+                    "name": "Grill Fold",
+                    "label": "Grill Fold",
+                    "osc_path": "/parameter/Hamburger/Grill_Fold",
+                    "id": 3148801
+                },
+                {
+                    "name": "Grill Bias",
+                    "label": "Grill Bias",
+                    "osc_path": "/parameter/Hamburger/Grill_Bias",
+                    "id": 1520031415
+                },
+                {
+                    "name": "Tube Saturation",
+                    "label": "Tube Saturation",
+                    "osc_path": "/parameter/Hamburger/Tube_Saturation",
+                    "id": 213239804
+                },
+                {
+                    "name": "Tube Jeff Amt",
+                    "label": "Tube Jeff Amt",
+                    "osc_path": "/parameter/Hamburger/Tube_Jeff_Amt",
+                    "id": 301685619
+                },
+                {
+                    "name": "Tube Bias",
+                    "label": "Tube Bias",
+                    "osc_path": "/parameter/Hamburger/Tube_Bias",
+                    "id": 1814770525
+                },
+                {
+                    "name": "Tube Tone",
+                    "label": "Tube Tone",
+                    "osc_path": "/parameter/Hamburger/Tube_Tone",
+                    "id": 1815312918
+                },
+                {
+                    "name": "Phase Distortion",
+                    "label": "Phase Distortion",
+                    "osc_path": "/parameter/Hamburger/Phase_Distortion",
+                    "id": 233700787
+                },
+                {
+                    "name": "Phase Dist Tone",
+                    "label": "Phase Dist Tone",
+                    "osc_path": "/parameter/Hamburger/Phase_Dist_Tone",
+                    "id": 891906771
+                },
+                {
+                    "name": "Phase Dist Stereo",
+                    "label": "Phase Dist Stereo",
+                    "osc_path": "/parameter/Hamburger/Phase_Dist_Stereo",
+                    "id": 252167449
+                },
+                {
+                    "name": "Phase Dist Rectify",
+                    "label": "Phase Dist Rectify",
+                    "osc_path": "/parameter/Hamburger/Phase_Dist_Rectify",
+                    "id": 617300125
+                },
+                {
+                    "name": "Rubidium Saturation",
+                    "label": "Rubidium Saturation",
+                    "osc_path": "/parameter/Hamburger/Rubidium_Saturation",
+                    "id": 1279660511
+                },
+                {
+                    "name": "Rubidium Mojo",
+                    "label": "Rubidium Mojo",
+                    "osc_path": "/parameter/Hamburger/Rubidium_Mojo",
+                    "id": 1644147118
+                },
+                {
+                    "name": "Rubidium Asymmetry",
+                    "label": "Rubidium Asymmetry",
+                    "osc_path": "/parameter/Hamburger/Rubidium_Asymmetry",
+                    "id": 1643793933
+                },
+                {
+                    "name": "Rubidium Tone",
+                    "label": "Rubidium Tone",
+                    "osc_path": "/parameter/Hamburger/Rubidium_Tone",
+                    "id": 1644355769
+                },
+                {
+                    "name": "Matrix #1",
+                    "label": "Matrix #1",
+                    "osc_path": "/parameter/Hamburger/Matrix_1",
+                    "id": 841310352
+                },
+                {
+                    "name": "Matrix #2",
+                    "label": "Matrix #2",
+                    "osc_path": "/parameter/Hamburger/Matrix_2",
+                    "id": 841310353
+                },
+                {
+                    "name": "Matrix #3",
+                    "label": "Matrix #3",
+                    "osc_path": "/parameter/Hamburger/Matrix_3",
+                    "id": 841310354
+                },
+                {
+                    "name": "Matrix #4",
+                    "label": "Matrix #4",
+                    "osc_path": "/parameter/Hamburger/Matrix_4",
+                    "id": 841310355
+                },
+                {
+                    "name": "Matrix #5",
+                    "label": "Matrix #5",
+                    "osc_path": "/parameter/Hamburger/Matrix_5",
+                    "id": 841310356
+                },
+                {
+                    "name": "Matrix #6",
+                    "label": "Matrix #6",
+                    "osc_path": "/parameter/Hamburger/Matrix_6",
+                    "id": 841310357
+                },
+                {
+                    "name": "Matrix #7",
+                    "label": "Matrix #7",
+                    "osc_path": "/parameter/Hamburger/Matrix_7",
+                    "id": 841310358
+                },
+                {
+                    "name": "Matrix #8",
+                    "label": "Matrix #8",
+                    "osc_path": "/parameter/Hamburger/Matrix_8",
+                    "id": 841310359
+                },
+                {
+                    "name": "Matrix #9",
+                    "label": "Matrix #9",
+                    "osc_path": "/parameter/Hamburger/Matrix_9",
+                    "id": 841310360
+                },
+                {
+                    "name": "Distortion Type",
+                    "label": "Distortion Type",
+                    "osc_path": "/parameter/Hamburger/Distortion_Type",
+                    "id": 1803619353
+                },
+                {
+                    "name": "Noise Type",
+                    "label": "Noise Type",
+                    "osc_path": "/parameter/Hamburger/Noise_Type",
+                    "id": 834165553
+                },
+                {
+                    "name": "Compression Type",
+                    "label": "Compression Type",
+                    "osc_path": "/parameter/Hamburger/Compression_Type",
+                    "id": 72038848
+                },
+                {
+                    "name": "Comp Speed",
+                    "label": "Comp Speed",
+                    "osc_path": "/parameter/Hamburger/Comp_Speed",
+                    "id": 721777272
+                },
+                {
+                    "name": "Comp Band Tilt",
+                    "label": "Comp Band Tilt",
+                    "osc_path": "/parameter/Hamburger/Comp_Band_Tilt",
+                    "id": 2126134977
+                },
+                {
+                    "name": "Stereo Link",
+                    "label": "Stereo Link",
+                    "osc_path": "/parameter/Hamburger/Stereo_Link",
+                    "id": 1309623425
+                },
+                {
+                    "name": "Comp Ratio",
+                    "label": "Comp Ratio",
+                    "osc_path": "/parameter/Hamburger/Comp_Ratio",
+                    "id": 720421436
+                },
+                {
+                    "name": "Comp Makeup",
+                    "label": "Comp Makeup",
+                    "osc_path": "/parameter/Hamburger/Comp_Makeup",
+                    "id": 950467007
+                },
+                {
+                    "name": "Stereo Comp Threshold",
+                    "label": "Stereo Comp Threshold",
+                    "osc_path": "/parameter/Hamburger/Stereo_Comp_Threshold",
+                    "id": 1098916100
+                },
+                {
+                    "name": "MB Comp Threshold",
+                    "label": "MB Comp Threshold",
+                    "osc_path": "/parameter/Hamburger/MB_Comp_Threshold",
+                    "id": 1700001415
+                },
+                {
+                    "name": "MS Comp Threshold",
+                    "label": "MS Comp Threshold",
+                    "osc_path": "/parameter/Hamburger/MS_Comp_Threshold",
+                    "id": 1695439382
+                },
+                {
+                    "name": "Sizzle Amt",
+                    "label": "Sizzle Amt",
+                    "osc_path": "/parameter/Hamburger/Sizzle_Amt",
+                    "id": 1093334343
+                },
+                {
+                    "name": "Sizzle Freq",
+                    "label": "Sizzle Freq",
+                    "osc_path": "/parameter/Hamburger/Sizzle_Freq",
+                    "id": 2069693965
+                },
+                {
+                    "name": "Sizzle Q",
+                    "label": "Sizzle Q",
+                    "osc_path": "/parameter/Hamburger/Sizzle_Q",
+                    "id": 2106180130
+                },
+                {
+                    "name": "Erosion Amt",
+                    "label": "Erosion Amt",
+                    "osc_path": "/parameter/Hamburger/Erosion_Amt",
+                    "id": 1572157007
+                },
+                {
+                    "name": "Noise Freq",
+                    "label": "Noise Freq",
+                    "osc_path": "/parameter/Hamburger/Noise_Freq",
+                    "id": 941803525
+                },
+                {
+                    "name": "Erosion Q",
+                    "label": "Erosion Q",
+                    "osc_path": "/parameter/Hamburger/Erosion_Q",
+                    "id": 1313668122
+                },
+                {
+                    "name": "Gate Amt",
+                    "label": "Gate Amt",
+                    "osc_path": "/parameter/Hamburger/Gate_Amt",
+                    "id": 1958313213
+                },
+                {
+                    "name": "Gate Mix",
+                    "label": "Gate Mix",
+                    "osc_path": "/parameter/Hamburger/Gate_Mix",
+                    "id": 1958324625
+                },
+                {
+                    "name": "Dwnsmpl Freq",
+                    "label": "Dwnsmpl Freq",
+                    "osc_path": "/parameter/Hamburger/Dwnsmpl_Freq",
+                    "id": 1003314532
+                },
+                {
+                    "name": "Dwnsmpl Mix",
+                    "label": "Dwnsmpl Mix",
+                    "osc_path": "/parameter/Hamburger/Dwnsmpl_Mix",
+                    "id": 1902760432
+                },
+                {
+                    "name": "Dwnsmpl Bits",
+                    "label": "Dwnsmpl Bits",
+                    "osc_path": "/parameter/Hamburger/Dwnsmpl_Bits",
+                    "id": 639087590
+                },
+                {
+                    "name": "Fizz Amt",
+                    "label": "Fizz Amt",
+                    "osc_path": "/parameter/Hamburger/Fizz_Amt",
+                    "id": 1367045499
+                },
+                {
+                    "name": "AllPass Frequency",
+                    "label": "AllPass Frequency",
+                    "osc_path": "/parameter/Hamburger/AllPass_Frequency",
+                    "id": 1389374186
+                },
+                {
+                    "name": "AllPass Q",
+                    "label": "AllPass Q",
+                    "osc_path": "/parameter/Hamburger/AllPass_Q",
+                    "id": 1783861567
+                },
+                {
+                    "name": "AllPass Number",
+                    "label": "AllPass Number",
+                    "osc_path": "/parameter/Hamburger/AllPass_Number",
+                    "id": 1453789258
+                },
+                {
+                    "name": "Grunge Amt",
+                    "label": "Grunge Amt",
+                    "osc_path": "/parameter/Hamburger/Grunge_Amt",
+                    "id": 1486302662
+                },
+                {
+                    "name": "Grunge Tone",
+                    "label": "Grunge Tone",
+                    "osc_path": "/parameter/Hamburger/Grunge_Tone",
+                    "id": 978793780
+                },
+                {
+                    "name": "Emphasis Low Gain",
+                    "label": "Emphasis Low Gain",
+                    "osc_path": "/parameter/Hamburger/Emphasis_Low_Gain",
+                    "id": 852375511
+                },
+                {
+                    "name": "Emphasis Hi Gain",
+                    "label": "Emphasis Hi Gain",
+                    "osc_path": "/parameter/Hamburger/Emphasis_Hi_Gain",
+                    "id": 814103005
+                },
+                {
+                    "name": "Emphasis Low Frequency",
+                    "label": "Emphasis Low Frequency",
+                    "osc_path": "/parameter/Hamburger/Emphasis_Low_Frequency",
+                    "id": 852361936
+                },
+                {
+                    "name": "Emphasis Hi Frequency",
+                    "label": "Emphasis Hi Frequency",
+                    "osc_path": "/parameter/Hamburger/Emphasis_Hi_Frequency",
+                    "id": 814089430
+                },
+                {
+                    "name": "Hamburger Enabled",
+                    "label": "Hamburger Enabled",
+                    "osc_path": "/parameter/Hamburger/Hamburger_Enabled",
+                    "id": 153048824
+                },
+                {
+                    "name": "Compressor On",
+                    "label": "Compressor On",
+                    "osc_path": "/parameter/Hamburger/Compressor_On",
+                    "id": 1747558885
+                },
+                {
+                    "name": "Dist Enabled",
+                    "label": "Dist Enabled",
+                    "osc_path": "/parameter/Hamburger/Dist_Enabled",
+                    "id": 826863106
+                },
+                {
+                    "name": "Emphasis EQ On",
+                    "label": "Emphasis EQ On",
+                    "osc_path": "/parameter/Hamburger/Emphasis_EQ_On",
+                    "id": 506769531
+                },
+                {
+                    "name": "Pre-Dist Enabled",
+                    "label": "Pre-Dist Enabled",
+                    "osc_path": "/parameter/Hamburger/Pre-Dist_Enabled",
+                    "id": 329252737
+                },
+                {
+                    "name": "Noise Enabled",
+                    "label": "Noise Enabled",
+                    "osc_path": "/parameter/Hamburger/Noise_Enabled",
+                    "id": 1336289258
+                },
+                {
+                    "name": "SoftClip Enabled",
+                    "label": "SoftClip Enabled",
+                    "osc_path": "/parameter/Hamburger/SoftClip_Enabled",
+                    "id": 758616337
+                },
+                {
+                    "name": "Oversampling Factor",
+                    "label": "Oversampling Factor",
+                    "osc_path": "/parameter/Hamburger/Oversampling_Factor",
+                    "id": 1949378026
+                },
+                {
+                    "name": "SoftClip Gain",
+                    "label": "SoftClip Gain",
+                    "osc_path": "/parameter/Hamburger/SoftClip_Gain",
+                    "id": 325752751
+                },
+                {
+                    "name": "SoftClip Knee",
+                    "label": "SoftClip Knee",
+                    "osc_path": "/parameter/Hamburger/SoftClip_Knee",
+                    "id": 325884275
+                }
+            ]
+        },
+        {
+            "name": "roar_verb",
+            "label": "MVerb",
+            "processor_id": 27,
+            "parent_track_id": 22,
+            "parameters": [
+                {
+                    "name": "Damping",
+                    "label": "Damping",
+                    "osc_path": "/parameter/roar_verb/Damping",
+                    "id": 0
+                },
+                {
+                    "name": "Density",
+                    "label": "Density",
+                    "osc_path": "/parameter/roar_verb/Density",
+                    "id": 1
+                },
+                {
+                    "name": "Bandwidth",
+                    "label": "Bandwidth",
+                    "osc_path": "/parameter/roar_verb/Bandwidth",
+                    "id": 2
+                },
+                {
+                    "name": "Decay",
+                    "label": "Decay",
+                    "osc_path": "/parameter/roar_verb/Decay",
+                    "id": 3
+                },
+                {
+                    "name": "Predelay",
+                    "label": "Predelay",
+                    "osc_path": "/parameter/roar_verb/Predelay",
+                    "id": 4
+                },
+                {
+                    "name": "Size",
+                    "label": "Size",
+                    "osc_path": "/parameter/roar_verb/Size",
+                    "id": 5
+                },
+                {
+                    "name": "Gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/roar_verb/Gain",
+                    "id": 6
+                },
+                {
+                    "name": "Mix",
+                    "label": "Mix",
+                    "osc_path": "/parameter/roar_verb/Mix",
+                    "id": 7
+                },
+                {
+                    "name": "Early/Late Mix",
+                    "label": "Early/Late Mix",
+                    "osc_path": "/parameter/roar_verb/EarlyLate_Mix",
+                    "id": 8
+                }
+            ]
+        },
+        {
+            "name": "roar_out_gain",
+            "label": "Gain",
+            "processor_id": 28,
+            "parent_track_id": 22,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/roar_out_gain/gain",
+                    "id": 0
+                }
+            ]
+        },
+        {
+            "name": "verb_return",
+            "label": "Return",
+            "processor_id": 30,
+            "parent_track_id": 29,
+            "parameters": []
+        },
+        {
+            "name": "reverb_highpass_filter",
+            "label": "MultiFilter",
+            "processor_id": 31,
+            "parent_track_id": 29,
+            "parameters": [
+                {
+                    "name": "frequency",
+                    "label": "Frequency",
+                    "osc_path": "/parameter/reverb_highpass_filter/frequency",
+                    "id": 0
+                },
+                {
+                    "name": "Q",
+                    "label": "Q",
+                    "osc_path": "/parameter/reverb_highpass_filter/Q",
+                    "id": 1
+                },
+                {
+                    "name": "input_coeff",
+                    "label": "Input coefficient",
+                    "osc_path": "/parameter/reverb_highpass_filter/input_coeff",
+                    "id": 2
+                },
+                {
+                    "name": "lowpass_coeff",
+                    "label": "Lowpass coefficient",
+                    "osc_path": "/parameter/reverb_highpass_filter/lowpass_coeff",
+                    "id": 3
+                },
+                {
+                    "name": "bandpass_coeff",
+                    "label": "Bandpass coefficient",
+                    "osc_path": "/parameter/reverb_highpass_filter/bandpass_coeff",
+                    "id": 4
+                },
+                {
+                    "name": "highpass_coeff",
+                    "label": "Highpass coefficient",
+                    "osc_path": "/parameter/reverb_highpass_filter/highpass_coeff",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "reverb_lowpass_filter",
+            "label": "MultiFilter",
+            "processor_id": 32,
+            "parent_track_id": 29,
+            "parameters": [
+                {
+                    "name": "frequency",
+                    "label": "Frequency",
+                    "osc_path": "/parameter/reverb_lowpass_filter/frequency",
+                    "id": 0
+                },
+                {
+                    "name": "Q",
+                    "label": "Q",
+                    "osc_path": "/parameter/reverb_lowpass_filter/Q",
+                    "id": 1
+                },
+                {
+                    "name": "input_coeff",
+                    "label": "Input coefficient",
+                    "osc_path": "/parameter/reverb_lowpass_filter/input_coeff",
+                    "id": 2
+                },
+                {
+                    "name": "lowpass_coeff",
+                    "label": "Lowpass coefficient",
+                    "osc_path": "/parameter/reverb_lowpass_filter/lowpass_coeff",
+                    "id": 3
+                },
+                {
+                    "name": "bandpass_coeff",
+                    "label": "Bandpass coefficient",
+                    "osc_path": "/parameter/reverb_lowpass_filter/bandpass_coeff",
+                    "id": 4
+                },
+                {
+                    "name": "highpass_coeff",
+                    "label": "Highpass coefficient",
+                    "osc_path": "/parameter/reverb_lowpass_filter/highpass_coeff",
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "name": "reverb_processor",
+            "label": "MVerb",
+            "processor_id": 33,
+            "parent_track_id": 29,
+            "parameters": [
+                {
+                    "name": "Damping",
+                    "label": "Damping",
+                    "osc_path": "/parameter/reverb_processor/Damping",
+                    "id": 0
+                },
+                {
+                    "name": "Density",
+                    "label": "Density",
+                    "osc_path": "/parameter/reverb_processor/Density",
+                    "id": 1
+                },
+                {
+                    "name": "Bandwidth",
+                    "label": "Bandwidth",
+                    "osc_path": "/parameter/reverb_processor/Bandwidth",
+                    "id": 2
+                },
+                {
+                    "name": "Decay",
+                    "label": "Decay",
+                    "osc_path": "/parameter/reverb_processor/Decay",
+                    "id": 3
+                },
+                {
+                    "name": "Predelay",
+                    "label": "Predelay",
+                    "osc_path": "/parameter/reverb_processor/Predelay",
+                    "id": 4
+                },
+                {
+                    "name": "Size",
+                    "label": "Size",
+                    "osc_path": "/parameter/reverb_processor/Size",
+                    "id": 5
+                },
+                {
+                    "name": "Gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/reverb_processor/Gain",
+                    "id": 6
+                },
+                {
+                    "name": "Mix",
+                    "label": "Mix",
+                    "osc_path": "/parameter/reverb_processor/Mix",
+                    "id": 7
+                },
+                {
+                    "name": "Early/Late Mix",
+                    "label": "Early/Late Mix",
+                    "osc_path": "/parameter/reverb_processor/EarlyLate_Mix",
+                    "id": 8
+                }
+            ]
+        },
+        {
+            "name": "JuceAutoFilter",
+            "label": "JuceAutoFilter",
+            "processor_id": 34,
+            "parent_track_id": 29,
+            "parameters": [
+                {
+                    "name": "Filter Frequency",
+                    "label": "Filter Frequency",
+                    "osc_path": "/parameter/JuceAutoFilter/Filter_Frequency",
+                    "id": 1292169951
+                },
+                {
+                    "name": "Filter Resonance",
+                    "label": "Filter Resonance",
+                    "osc_path": "/parameter/JuceAutoFilter/Filter_Resonance",
+                    "id": 958946343
+                },
+                {
+                    "name": "LFO Depth",
+                    "label": "LFO Depth",
+                    "osc_path": "/parameter/JuceAutoFilter/LFO_Depth",
+                    "id": 1693104121
+                },
+                {
+                    "name": "LFO Rate",
+                    "label": "LFO Rate",
+                    "osc_path": "/parameter/JuceAutoFilter/LFO_Rate",
+                    "id": 1509776586
+                },
+                {
+                    "name": "Filter Gain",
+                    "label": "Filter Gain",
+                    "osc_path": "/parameter/JuceAutoFilter/Filter_Gain",
+                    "id": 1292183526
+                }
+            ]
+        },
+        {
+            "name": "verb_gain",
+            "label": "Gain",
+            "processor_id": 35,
+            "parent_track_id": 29,
+            "parameters": [
+                {
+                    "name": "gain",
+                    "label": "Gain",
+                    "osc_path": "/parameter/verb_gain/gain",
+                    "id": 0
+                }
+            ]
+        }
+    ]
+}
