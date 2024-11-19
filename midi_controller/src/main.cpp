@@ -178,96 +178,109 @@ CCPotentiometer ReverbLFODepth = {mux5.pin(13), {7, Channel_8}};
 CCPotentiometer ReverbLFORate = {mux5.pin(14), {8, Channel_8}};
 CCPotentiometer ReverbLevel = {mux5.pin(15), {9, Channel_8}};
 
+constexpr analog_t maxRawValue = CCPotentiometer::getMaxRawValue();
+constexpr analog_t minimumValue = maxRawValue / 64;
+constexpr analog_t maximumValue = maxRawValue - maxRawValue / 64;
+
+analog_t fixDeadZoneAndInvertPot(analog_t raw) {
+    // make sure that the analog value is between the minimum and maximum
+    raw = constrain(raw, minimumValue, maximumValue);
+    // map the value from [minimumValue, maximumValue] to [0, maxRawValue]
+    analog_t fixedDeadZone = map(raw, minimumValue, maximumValue, 0, maxRawValue);
+    // invert the value
+    return maxRawValue - fixedDeadZone;
+}
+
 void setup()
 {
     Control_Surface.begin();
     samplerButtons.begin();
 
-    SamplerSpeed.invert();
-    SamplerReverb.invert();
-    SamplerDelay.invert();
-    SamplerGrain.invert();
-    SamplerLevel.invert();
+    SamplerSpeed.map(fixDeadZoneAndInvertPot);
+    SamplerReverb.map(fixDeadZoneAndInvertPot);
+    SamplerDelay.map(fixDeadZoneAndInvertPot);
+    SamplerGrain.map(fixDeadZoneAndInvertPot);
+    SamplerLevel.map(fixDeadZoneAndInvertPot);
 
-    Eq1Freq.invert();
-    Eq1Gain.invert();
-    Eq1Q.invert();
-    Eq2Freq.invert();
-    Eq2Gain.invert();
-    Eq2Q.invert();
+    Eq1Freq.map(fixDeadZoneAndInvertPot);
+    Eq1Gain.map(fixDeadZoneAndInvertPot);
+    Eq1Q.map(fixDeadZoneAndInvertPot);
+    Eq2Freq.map(fixDeadZoneAndInvertPot);
+    Eq2Gain.map(fixDeadZoneAndInvertPot);
+    Eq2Q.map(fixDeadZoneAndInvertPot);
 
     XSubSwitch.invert();
-    XSubAtk.invert();
-    XSubRel.invert();
-    XSubTresh.invert();
-    XSubGain.invert();
+    XSubAtk.map(fixDeadZoneAndInvertPot);
+    XSubRel.map(fixDeadZoneAndInvertPot);
+    XSubTresh.map(fixDeadZoneAndInvertPot);
+    XSubGain.map(fixDeadZoneAndInvertPot);
     XBassSwitch.invert();
-    XBassAtk.invert();
-    XBassRel.invert();
-    XBassTresh.invert();
-    XBassGain.invert();
+    XBassAtk.map(fixDeadZoneAndInvertPot);
+    XBassRel.map(fixDeadZoneAndInvertPot);
+    XBassTresh.map(fixDeadZoneAndInvertPot);
+    XBassGain.map(fixDeadZoneAndInvertPot);
     XMidSwitch.invert();
-    XMidAtk.invert();
-    XMidRel.invert();
-    XMidTresh.invert();
-    XMidGain.invert();
+    XMidAtk.map(fixDeadZoneAndInvertPot);
+    XMidRel.map(fixDeadZoneAndInvertPot);
+    XMidTresh.map(fixDeadZoneAndInvertPot);
+    XMidGain.map(fixDeadZoneAndInvertPot);
     XHighSwitch.invert();
-    XHighAtk.invert();
-    XHighRel.invert();
-    XHighTresh.invert();
-    XHighGain.invert();
+    XHighAtk.map(fixDeadZoneAndInvertPot);
+    XHighRel.map(fixDeadZoneAndInvertPot);
+    XHighTresh.map(fixDeadZoneAndInvertPot);
+    XHighGain.map(fixDeadZoneAndInvertPot);
 
-    DelayLFORate.invert();
-    DelayLFODepth.invert();
-    DelayTime.invert();
-    DelayFeedback.invert();
-    DelaySampleRate.invert();
-    DelayHighCutResonance.invert();
-    DelayHighCutFreq.invert();
-    DelayStereoWidth.invert();
-    DelayNoise.invert();
-    DelayLevel.invert();
+    DelayLFORate.map(fixDeadZoneAndInvertPot);
+    DelayLFODepth.map(fixDeadZoneAndInvertPot);
+    DelayTime.map(fixDeadZoneAndInvertPot);
+    DelayFeedback.map(fixDeadZoneAndInvertPot);
+    DelaySampleRate.map(fixDeadZoneAndInvertPot);
+    DelayHighCutResonance.map(fixDeadZoneAndInvertPot);
+    DelayHighCutFreq.map(fixDeadZoneAndInvertPot);
+    DelayStereoWidth.map(fixDeadZoneAndInvertPot);
+    DelayNoise.map(fixDeadZoneAndInvertPot);
+    DelayLevel.map(fixDeadZoneAndInvertPot);
     DelayTapTempo.invert();
     DelayType.invert();
 
-    GrainPitch.invert();
-    GrainFine.invert();
-    GrainSize.invert();
-    GrainTexture.invert();
-    GrainStretch.invert();
-    GrainFeedback.invert();
-    GrainShimmer.invert();
-    GrainHighCut.invert();
-    GrainLevel.invert();
+    GrainPitch.map(fixDeadZoneAndInvertPot);
+    GrainFine.map(fixDeadZoneAndInvertPot);
+    GrainSize.map(fixDeadZoneAndInvertPot);
+    GrainTexture.map(fixDeadZoneAndInvertPot);
+    GrainStretch.map(fixDeadZoneAndInvertPot);
+    GrainFeedback.map(fixDeadZoneAndInvertPot);
+    GrainShimmer.map(fixDeadZoneAndInvertPot);
+    GrainHighCut.map(fixDeadZoneAndInvertPot);
+    GrainLevel.map(fixDeadZoneAndInvertPot);
     GrainType.invert();
     GrainPlayback.invert();
 
-    InputAGain.invert();
-    InputADelaySend.invert();
-    InputAGrainSend.invert();
-    InputASubRoarSend.invert();
-    InputAReverbSend.invert();
+    InputAGain.map(fixDeadZoneAndInvertPot);
+    InputADelaySend.map(fixDeadZoneAndInvertPot);
+    InputAGrainSend.map(fixDeadZoneAndInvertPot);
+    InputASubRoarSend.map(fixDeadZoneAndInvertPot);
+    InputAReverbSend.map(fixDeadZoneAndInvertPot);
 
-    SubRoarInGain.invert();
-    SubRoarLowPassFreq.invert();
-    SubRoarFold.invert();
-    SubRoarEmphasisFreq.invert();
-    SubRoarEmphasisGain.invert();
-    SubRoarReverbMix.invert();
-    SubRoarReverbRoomSize.invert();
-    SubRoarReverbDecay.invert();
-    SubRoarLevel.invert();
+    SubRoarInGain.map(fixDeadZoneAndInvertPot);
+    SubRoarLowPassFreq.map(fixDeadZoneAndInvertPot);
+    SubRoarFold.map(fixDeadZoneAndInvertPot);
+    SubRoarEmphasisFreq.map(fixDeadZoneAndInvertPot);
+    SubRoarEmphasisGain.map(fixDeadZoneAndInvertPot);
+    SubRoarReverbMix.map(fixDeadZoneAndInvertPot);
+    SubRoarReverbRoomSize.map(fixDeadZoneAndInvertPot);
+    SubRoarReverbDecay.map(fixDeadZoneAndInvertPot);
+    SubRoarLevel.map(fixDeadZoneAndInvertPot);
 
-    ReverbLowCutFreq.invert();
-    ReverbHighCutFreq.invert();
-    ReverbDecay.invert();
-    ReverbPreDelay.invert();
-    ReverbRoomSize.invert();
-    ReverbBellResonance.invert();
-    ReverbBellFrequency.invert();
-    ReverbLFODepth.invert();
-    ReverbLFORate.invert();
-    ReverbLevel.invert();
+    ReverbLowCutFreq.map(fixDeadZoneAndInvertPot);
+    ReverbHighCutFreq.map(fixDeadZoneAndInvertPot);
+    ReverbDecay.map(fixDeadZoneAndInvertPot);
+    ReverbPreDelay.map(fixDeadZoneAndInvertPot);
+    ReverbRoomSize.map(fixDeadZoneAndInvertPot);
+    ReverbBellResonance.map(fixDeadZoneAndInvertPot);
+    ReverbBellFrequency.map(fixDeadZoneAndInvertPot);
+    ReverbLFODepth.map(fixDeadZoneAndInvertPot);
+    ReverbLFORate.map(fixDeadZoneAndInvertPot);
+    ReverbLevel.map(fixDeadZoneAndInvertPot);
 
     Serial.begin(115200);
 }
