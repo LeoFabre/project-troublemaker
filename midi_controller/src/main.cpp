@@ -117,8 +117,8 @@ CCPotentiometer DelayLFODepth = {mux2.pin(12), {1, Channel_4}};
 CCPotentiometer DelayTime = {mux2.pin(13), {2, Channel_4}};
 CCPotentiometer DelayFeedback = {mux2.pin(14), {3, Channel_4}};
 CCPotentiometer DelaySampleRate = {mux2.pin(15), {4, Channel_4}};
-CCPotentiometer DelayLowCutResonance = {mux3.pin(0), {5, Channel_4}};
-CCPotentiometer DelayLowCutFreq = {mux3.pin(1), {6, Channel_4}};
+// CCPotentiometer DelayLowCutResonance = {mux3.pin(0), {5, Channel_4}}; //Lowcut to be implemented
+// CCPotentiometer DelayLowCutFreq = {mux3.pin(1), {6, Channel_4}}; //Lowcut to be implemented
 CCPotentiometer DelayHighCutResonance = {mux3.pin(2), {7, Channel_4}};
 CCPotentiometer DelayHighCutFreq = {mux3.pin(3), {8, Channel_4}};
 CCPotentiometer DelayStereoWidth = {mux3.pin(4), {9, Channel_4}};
@@ -146,7 +146,7 @@ CCPotentiometer InputADelaySend = {mux4.pin(2), {1, Channel_6}};
 CCPotentiometer InputAGrainSend = {mux4.pin(4), {2, Channel_6}};
 CCPotentiometer InputASubRoarSend = {mux4.pin(6), {3, Channel_6}};
 CCPotentiometer InputAReverbSend = {mux4.pin(8), {4, Channel_6}};
-CCPotentiometer InputAAuxSend = {mux4.pin(10), {5, Channel_6}};
+// CCPotentiometer InputAAuxSend = {mux4.pin(10), {5, Channel_6}};
 
 //no input b for now, stereo input only
 // CCPotentiometer InputBGain = {mux4.pin(1), {6, Channel_12}};
@@ -182,6 +182,93 @@ void setup()
 {
     Control_Surface.begin();
     samplerButtons.begin();
+
+    SamplerSpeed.invert();
+    SamplerReverb.invert();
+    SamplerDelay.invert();
+    SamplerGrain.invert();
+    SamplerLevel.invert();
+
+    Eq1Freq.invert();
+    Eq1Gain.invert();
+    Eq1Q.invert();
+    Eq2Freq.invert();
+    Eq2Gain.invert();
+    Eq2Q.invert();
+
+    XSubSwitch.invert();
+    XSubAtk.invert();
+    XSubRel.invert();
+    XSubTresh.invert();
+    XSubGain.invert();
+    XBassSwitch.invert();
+    XBassAtk.invert();
+    XBassRel.invert();
+    XBassTresh.invert();
+    XBassGain.invert();
+    XMidSwitch.invert();
+    XMidAtk.invert();
+    XMidRel.invert();
+    XMidTresh.invert();
+    XMidGain.invert();
+    XHighSwitch.invert();
+    XHighAtk.invert();
+    XHighRel.invert();
+    XHighTresh.invert();
+    XHighGain.invert();
+
+    DelayLFORate.invert();
+    DelayLFODepth.invert();
+    DelayTime.invert();
+    DelayFeedback.invert();
+    DelaySampleRate.invert();
+    DelayHighCutResonance.invert();
+    DelayHighCutFreq.invert();
+    DelayStereoWidth.invert();
+    DelayNoise.invert();
+    DelayLevel.invert();
+    DelayTapTempo.invert();
+    DelayType.invert();
+
+    GrainPitch.invert();
+    GrainFine.invert();
+    GrainSize.invert();
+    GrainTexture.invert();
+    GrainStretch.invert();
+    GrainFeedback.invert();
+    GrainShimmer.invert();
+    GrainHighCut.invert();
+    GrainLevel.invert();
+    GrainType.invert();
+    GrainPlayback.invert();
+
+    InputAGain.invert();
+    InputADelaySend.invert();
+    InputAGrainSend.invert();
+    InputASubRoarSend.invert();
+    InputAReverbSend.invert();
+
+    SubRoarInGain.invert();
+    SubRoarLowPassFreq.invert();
+    SubRoarFold.invert();
+    SubRoarEmphasisFreq.invert();
+    SubRoarEmphasisGain.invert();
+    SubRoarReverbMix.invert();
+    SubRoarReverbRoomSize.invert();
+    SubRoarReverbDecay.invert();
+    SubRoarLevel.invert();
+
+    ReverbLowCutFreq.invert();
+    ReverbHighCutFreq.invert();
+    ReverbDecay.invert();
+    ReverbPreDelay.invert();
+    ReverbRoomSize.invert();
+    ReverbBellResonance.invert();
+    ReverbBellFrequency.invert();
+    ReverbLFODepth.invert();
+    ReverbLFORate.invert();
+    ReverbLevel.invert();
+
     Serial.begin(115200);
 }
 
