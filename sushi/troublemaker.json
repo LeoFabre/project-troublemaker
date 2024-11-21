@@ -114,6 +114,11 @@
                     "type": "internal"
                 },
                 {
+                    "uid": "sushi.brickworks.multi_filter",
+                    "name": "echo_highpass_filter",
+                    "type": "internal"
+                },
+                {
                     "path": "StrangeReturns.vst3",
                     "uid": "Strange Returns",
                     "name": "Strange Returns",
@@ -449,7 +454,7 @@
                 "plugin_name": "SimpleDualParametricEq",
                 "parameter_name": "EQ1 Frequency",
                 "min_range": 0.0,
-                "max_range": 0.40
+                "max_range": 0.005
             },
             {
                 "port": 0,
@@ -458,7 +463,7 @@
                 "plugin_name": "SimpleDualParametricEq",
                 "parameter_name": "EQ1 Gain",
                 "min_range": 0.0,
-                "max_range": 1.0
+                "max_range": 0.15
             },
             {
                 "port": 0,
