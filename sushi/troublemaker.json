@@ -114,15 +114,15 @@
                     "type": "internal"
                 },
                 {
-                    "uid": "sushi.brickworks.multi_filter",
-                    "name": "echo_highpass_filter",
-                    "type": "internal"
-                },
-                {
                     "path": "StrangeReturns.vst3",
                     "uid": "Strange Returns",
                     "name": "Strange Returns",
                     "type": "vst3x"
+                },
+                {
+                    "uid": "sushi.brickworks.multi_filter",
+                    "name": "echo_highpass_filter",
+                    "type": "internal"
                 },
                 {
                     "uid": "sushi.testing.gain",
@@ -317,9 +317,18 @@
         {
             "processor": "echo_highpass_filter",
             "parameters": {
-                "frequency": 0.08,
+                "frequency": 0.1,
                 "input_coeff": 0.5,
                 "highpass_coeff": 1.0
+            }
+        },
+        {
+            "processor": "SimpleDualParametricEq",
+            "parameters": {
+                "EQ1 On": 0.0,
+                "EQ2 On": 0.0,
+                "EQ1 Gain": 0.5,
+                "EQ2 Gain": 0.5
             }
         },
         {
@@ -406,10 +415,10 @@
                 "port": 0,
                 "channel": 0,
                 "cc_number": 1,
-                "plugin_name": "sampler_verb_send",
+                "plugin_name": "sampler_gain",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 0.9
             },
             {
                 "port": 0,
@@ -454,7 +463,7 @@
                 "plugin_name": "SimpleDualParametricEq",
                 "parameter_name": "EQ1 Frequency",
                 "min_range": 0.0,
-                "max_range": 0.005
+                "max_range": 0.004004004
             },
             {
                 "port": 0,
@@ -463,7 +472,7 @@
                 "plugin_name": "SimpleDualParametricEq",
                 "parameter_name": "EQ1 Gain",
                 "min_range": 0.0,
-                "max_range": 0.15
+                "max_range": 1.0
             },
             {
                 "port": 0,
@@ -489,8 +498,8 @@
                 "cc_number": 5,
                 "plugin_name": "SimpleDualParametricEq",
                 "parameter_name": "EQ2 Frequency",
-                "min_range": 0.30,
-                "max_range": 0.70
+                "min_range": 0.004004004,
+                "max_range": 0.009
             },
             {
                 "port": 0,
@@ -747,6 +756,24 @@
             {
                 "port": 0,
                 "channel": 3,
+                "cc_number": 5,
+                "plugin_name": "echo_highpass_filter",
+                "parameter_name": "frequency",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 0,
+                "plugin_name": "echo_highpass_filter",
+                "parameter_name": "Q",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 3,
                 "cc_number": 7,
                 "plugin_name": "Strange Returns",
                 "parameter_name": "LPF Resonance",
@@ -813,7 +840,7 @@
                 "cc_number": 1,
                 "plugin_name": "Graindr",
                 "parameter_name": "Fine Tune",
-                "min_range": 0.0,
+                "min_range": 0.1,
                 "max_range": 1.0
             },
             {

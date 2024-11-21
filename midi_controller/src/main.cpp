@@ -117,8 +117,8 @@ CCPotentiometer DelayLFODepth = {mux2.pin(12), {1, Channel_4}};
 CCPotentiometer DelayTime = {mux2.pin(13), {2, Channel_4}};
 CCPotentiometer DelayFeedback = {mux2.pin(14), {3, Channel_4}};
 CCPotentiometer DelaySampleRate = {mux2.pin(15), {4, Channel_4}};
-// CCPotentiometer DelayLowCutResonance = {mux3.pin(0), {5, Channel_4}}; //Lowcut to be implemented
-// CCPotentiometer DelayLowCutFreq = {mux3.pin(1), {6, Channel_4}}; //Lowcut to be implemented
+CCPotentiometer DelayLowCutResonance = {mux3.pin(0), {5, Channel_4}}; //Lowcut to be implemented
+CCPotentiometer DelayLowCutFreq = {mux3.pin(1), {6, Channel_4}}; //Lowcut to be implemented
 CCPotentiometer DelayHighCutResonance = {mux3.pin(2), {7, Channel_4}};
 CCPotentiometer DelayHighCutFreq = {mux3.pin(3), {8, Channel_4}};
 CCPotentiometer DelayStereoWidth = {mux3.pin(4), {9, Channel_4}};
@@ -242,6 +242,8 @@ void setup()
     DelayTime.map(fixDeadZone);
     DelayFeedback.map(fixDeadZoneAndInvertPot);
     DelaySampleRate.map(fixDeadZoneAndInvertPot);
+    DelayLowCutFreq.map(fixDeadZoneAndInvertPot);
+    DelayLowCutResonance.map(fixDeadZoneAndInvertPot);
     DelayHighCutResonance.map(fixDeadZoneAndInvertPot);
     DelayHighCutFreq.map(fixDeadZoneAndInvertPot);
     DelayStereoWidth.map(fixDeadZoneAndInvertPot);
