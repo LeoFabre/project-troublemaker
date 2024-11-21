@@ -368,12 +368,6 @@
                 "Mix": 1.0,
                 "Gain": 1.0
             }
-        },
-        {
-            "processor": "JuceAutoFilter",
-            "parameters": {
-                "Filter Gain": 0.0
-            }
         }
     ],
     "midi": {
@@ -815,7 +809,7 @@
                 "cc_number": 2,
                 "plugin_name": "Graindr",
                 "parameter_name": "Grain Size",
-                "min_range": 0.1,
+                "min_range": 0.0,
                 "max_range": 1.0
             },
             {
@@ -1058,42 +1052,6 @@
                 "cc_number": 4,
                 "plugin_name": "reverb_processor",
                 "parameter_name": "Size",
-                "min_range": 0.0,
-                "max_range": 1.0
-            },
-            {
-                "port": 0,
-                "channel": 7,
-                "cc_number": 5,
-                "plugin_name": "JuceAutoFilter",
-                "parameter_name": "Filter Resonance",
-                "min_range": 0.0,
-                "max_range": 1.0
-            },
-            {
-                "port": 0,
-                "channel": 7,
-                "cc_number": 6,
-                "plugin_name": "JuceAutoFilter",
-                "parameter_name": "Filter Frequency",
-                "min_range": 0.0,
-                "max_range": 1.0
-            },
-            {
-                "port": 0,
-                "channel": 7,
-                "cc_number": 7,
-                "plugin_name": "JuceAutoFilter",
-                "parameter_name": "LFO Depth",
-                "min_range": 0.0,
-                "max_range": 1.0
-            },
-            {
-                "port": 0,
-                "channel": 7,
-                "cc_number": 8,
-                "plugin_name": "JuceAutoFilter",
-                "parameter_name": "LFO Rate",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
