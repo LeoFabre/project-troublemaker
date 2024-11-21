@@ -172,11 +172,6 @@
                     "type": "internal"
                 },
                 {
-                    "uid": "sushi.testing.gain",
-                    "name": "roar_in_gain",
-                    "type": "internal"
-                },
-                {
                     "uid": "sushi.brickworks.multi_filter",
                     "name": "roar_lowpass_filter",
                     "type": "internal"
@@ -191,6 +186,11 @@
                     "path": "MVerb-vst.so",
                     "name": "roar_verb",
                     "type": "vst2x"
+                },
+                {
+                    "uid": "sushi.brickworks.multi_filter",
+                    "name": "roar_highpass_filter",
+                    "type": "internal"
                 },
                 {
                     "uid": "sushi.testing.gain",
@@ -324,15 +324,55 @@
             }
         },
         {
+            "processor": "roar_lowpass_filter",
+            "parameters": {
+                "frequency": 0.08,
+                "input_coeff": 0.5,
+                "lowpass_coeff": 1.0
+            }
+        },
+        {
+            "processor": "roar_highpass_filter",
+            "parameters": {
+                "frequency": 0.0,
+                "input_coeff": 0.5,
+                "highass_coeff": 1.0
+            }
+        },
+        {
             "processor": "Hamburger",
             "parameters": {
-                "Mix": 1.0
+                "Mix": 1.0,
+                "Grill Saturation": 0.3
+            }
+        },
+        {
+            "processor": "reverb_highpass_filter",
+            "parameters": {
+                "frequency": 0.0,
+                "input_coeff": 0.5,
+                "highpass_coeff": 1.0
+            }
+        },
+        {
+            "processor": "reverb_lowpass_filter",
+            "parameters": {
+                "frequency": 1.0,
+                "input_coeff": 0.5,
+                "lowpass_coeff": 1.0
             }
         },
         {
             "processor": "reverb_processor",
             "parameters": {
-                "Mix": 1.0
+                "Mix": 1.0,
+                "Gain": 1.0
+            }
+        },
+        {
+            "processor": "JuceAutoFilter",
+            "parameters": {
+                "Filter Gain": 0.0
             }
         }
     ],
@@ -362,7 +402,7 @@
                 "plugin_name": "sampler_verb_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
@@ -371,7 +411,7 @@
                 "plugin_name": "sampler_echo_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
@@ -380,7 +420,7 @@
                 "plugin_name": "sampler_grain_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
@@ -740,7 +780,7 @@
                 "plugin_name": "echo_gain",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
@@ -775,7 +815,7 @@
                 "cc_number": 2,
                 "plugin_name": "Graindr",
                 "parameter_name": "Grain Size",
-                "min_range": 0.0,
+                "min_range": 0.1,
                 "max_range": 1.0
             },
             {
@@ -784,7 +824,7 @@
                 "cc_number": 3,
                 "plugin_name": "Graindr",
                 "parameter_name": "Texture",
-                "min_range": 0.0,
+                "min_range": 0.05,
                 "max_range": 1.0
             },
             {
@@ -830,7 +870,7 @@
                 "plugin_name": "grain_gain",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
@@ -857,7 +897,7 @@
                 "plugin_name": "input_gain",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
@@ -866,7 +906,7 @@
                 "plugin_name": "main_echo_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
@@ -875,7 +915,7 @@
                 "plugin_name": "main_grain_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
@@ -884,7 +924,7 @@
                 "plugin_name": "main_roar_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
@@ -893,21 +933,12 @@
                 "plugin_name": "main_verb_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
                 "channel": 6,
                 "cc_number": 0,
-                "plugin_name": "roar_in_gain",
-                "parameter_name": "gain",
-                "min_range": 0.0,
-                "max_range": 0.83
-            },
-            {
-                "port": 0,
-                "channel": 6,
-                "cc_number": 1,
                 "plugin_name": "roar_lowpass_filter",
                 "parameter_name": "frequency",
                 "min_range": 0.0,
@@ -916,16 +947,16 @@
             {
                 "port": 0,
                 "channel": 6,
-                "cc_number": 2,
+                "cc_number": 1,
                 "plugin_name": "Hamburger",
-                "parameter_name": "Grill Fold",
+                "parameter_name": "Grill Diode",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
             {
                 "port": 0,
                 "channel": 6,
-                "cc_number": 3,
+                "cc_number": 2,
                 "plugin_name": "Hamburger",
                 "parameter_name": "Emphasis Low Frequency",
                 "min_range": 0.0,
@@ -934,7 +965,7 @@
             {
                 "port": 0,
                 "channel": 6,
-                "cc_number": 4,
+                "cc_number": 3,
                 "plugin_name": "Hamburger",
                 "parameter_name": "Emphasis Low Gain",
                 "min_range": 0.0,
@@ -943,7 +974,7 @@
             {
                 "port": 0,
                 "channel": 6,
-                "cc_number": 5,
+                "cc_number": 4,
                 "plugin_name": "roar_verb",
                 "parameter_name": "Mix",
                 "min_range": 0.0,
@@ -952,7 +983,7 @@
             {
                 "port": 0,
                 "channel": 6,
-                "cc_number": 6,
+                "cc_number": 5,
                 "plugin_name": "roar_verb",
                 "parameter_name": "Size",
                 "min_range": 0.0,
@@ -961,7 +992,7 @@
             {
                 "port": 0,
                 "channel": 6,
-                "cc_number": 7,
+                "cc_number": 6,
                 "plugin_name": "roar_verb",
                 "parameter_name": "Decay",
                 "min_range": 0.0,
@@ -970,11 +1001,20 @@
             {
                 "port": 0,
                 "channel": 6,
-                "cc_number": 7,
+                "cc_number": 6,
+                "plugin_name": "roar_highpass_filter",
+                "parameter_name": "frequency",
+                "min_range": 0.0,
+                "max_range": 1.0
+            },
+            {
+                "port": 0,
+                "channel": 6,
+                "cc_number": 8,
                 "plugin_name": "roar_out_gain",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.85
             },
             {
                 "port": 0,
@@ -1060,11 +1100,11 @@
             {
                 "port": 0,
                 "channel": 7,
-                "cc_number": 8,
+                "cc_number": 9,
                 "plugin_name": "verb_gain",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 0.95
             }
         ]
     }
