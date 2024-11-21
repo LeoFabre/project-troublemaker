@@ -310,6 +310,14 @@
             }
         },
         {
+            "processor": "echo_highpass_filter",
+            "parameters": {
+                "frequency": 0.08,
+                "input_coeff": 0.5,
+                "highpass_coeff": 1.0
+            }
+        },
+        {
             "processor": "Strange Returns",
             "parameters": {
                 "Dry/Wet": 1.0
@@ -702,7 +710,7 @@
                 "plugin_name": "Strange Returns",
                 "parameter_name": "Time",
                 "min_range": 0.1,
-                "max_range": 1.0
+                "max_range": 0.5
             },
             {
                 "port": 0,
@@ -995,7 +1003,7 @@
             {
                 "port": 0,
                 "channel": 6,
-                "cc_number": 6,
+                "cc_number": 7,
                 "plugin_name": "roar_highpass_filter",
                 "parameter_name": "frequency",
                 "min_range": 0.0,

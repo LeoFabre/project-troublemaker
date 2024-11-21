@@ -191,6 +191,13 @@ analog_t fixDeadZoneAndInvertPot(analog_t raw) {
     return maxRawValue - fixedDeadZone;
 }
 
+analog_t fixDeadZone(analog_t raw) {
+    // make sure that the analog value is between the minimum and maximum
+    raw = constrain(raw, minimumValue, maximumValue);
+    // map the value from [minimumValue, maximumValue] to [0, maxRawValue]
+    return map(raw, minimumValue, maximumValue, 0, maxRawValue);
+}
+
 void setup()
 {
     Control_Surface.begin();
@@ -232,7 +239,7 @@ void setup()
 
     DelayLFORate.map(fixDeadZoneAndInvertPot);
     DelayLFODepth.map(fixDeadZoneAndInvertPot);
-    DelayTime.map(fixDeadZoneAndInvertPot);
+    DelayTime.map(fixDeadZone);
     DelayFeedback.map(fixDeadZoneAndInvertPot);
     DelaySampleRate.map(fixDeadZoneAndInvertPot);
     DelayHighCutResonance.map(fixDeadZoneAndInvertPot);
@@ -240,8 +247,6 @@ void setup()
     DelayStereoWidth.map(fixDeadZoneAndInvertPot);
     DelayNoise.map(fixDeadZoneAndInvertPot);
     DelayLevel.map(fixDeadZoneAndInvertPot);
-    DelayTapTempo.invert();
-    DelayType.invert();
 
     GrainPitch.map(fixDeadZoneAndInvertPot);
     GrainFine.map(fixDeadZoneAndInvertPot);
