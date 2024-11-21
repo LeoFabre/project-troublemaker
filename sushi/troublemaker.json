@@ -336,7 +336,7 @@
             "parameters": {
                 "frequency": 0.0,
                 "input_coeff": 0.5,
-                "highass_coeff": 1.0
+                "highpass_coeff": 1.0
             }
         },
         {
