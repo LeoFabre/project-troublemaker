@@ -215,7 +215,7 @@ void setup()
     SamplerReverb.map(mapPotForGainControl);
     SamplerDelay.map(mapPotForGainControl);
     SamplerGrain.map(mapPotForGainControl);
-    SamplerLevel.map(mapPotForGainControl);
+    SamplerLevel.map(fixDeadZoneAndInvertPot);
 
     Eq1Freq.map(fixDeadZoneAndInvertPot);
     Eq1Gain.map(fixDeadZoneAndInvertPot);
@@ -256,7 +256,7 @@ void setup()
     DelayHighCutFreq.map(fixDeadZoneAndInvertPot);
     DelayStereoWidth.map(fixDeadZoneAndInvertPot);
     DelayNoise.map(fixDeadZoneAndInvertPot);
-    DelayLevel.map(mapPotForGainControl);
+    DelayLevel.map(fixDeadZoneAndInvertPot);
 
     GrainPitch.map(fixDeadZoneAndInvertPot);
     GrainFine.map(fixDeadZoneAndInvertPot);
@@ -266,11 +266,11 @@ void setup()
     GrainFeedback.map(fixDeadZoneAndInvertPot);
     GrainShimmer.map(fixDeadZoneAndInvertPot);
     GrainHighCut.map(fixDeadZoneAndInvertPot);
-    GrainLevel.map(mapPotForGainControl);
+    GrainLevel.map(fixDeadZoneAndInvertPot);
     GrainType.invert();
     GrainPlayback.invert();
 
-    InputAGain.map(mapPotForGainControl);
+    InputAGain.map(fixDeadZoneAndInvertPot);
     InputADelaySend.map(mapPotForGainControl);
     InputAGrainSend.map(mapPotForGainControl);
     InputASubRoarSend.map(mapPotForGainControl);
@@ -284,7 +284,7 @@ void setup()
     SubRoarReverbMix.map(fixDeadZoneAndInvertPot);
     SubRoarReverbRoomSize.map(fixDeadZoneAndInvertPot);
     SubRoarReverbDecay.map(fixDeadZoneAndInvertPot);
-    SubRoarLevel.map(mapPotForGainControl);
+    SubRoarLevel.map(fixDeadZoneAndInvertPot);
 
     ReverbLowCutFreq.map(fixDeadZoneAndInvertPot);
     ReverbHighCutFreq.map(fixDeadZoneAndInvertPot);
@@ -295,7 +295,7 @@ void setup()
     ReverbBellFrequency.map(fixDeadZoneAndInvertPot);
     ReverbLFODepth.map(fixDeadZoneAndInvertPot);
     ReverbLFORate.map(fixDeadZoneAndInvertPot);
-    ReverbLevel.map(mapPotForGainControl);
+    ReverbLevel.map(fixDeadZoneAndInvertPot);
 
     Serial.begin(115200);
 }

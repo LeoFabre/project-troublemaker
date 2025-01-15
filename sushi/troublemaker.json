@@ -21,7 +21,7 @@
             "plugins": [
                 {
                     "path": "TroublemakerSmoothGain.vst3",
-                    "uid": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain",
                     "name": "input_gain",
                     "type": "vst3x"
                 },
@@ -78,7 +78,7 @@
                 },
                 {
                     "path": "TroublemakerSmoothGain.vst3",
-                    "uid": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain",
                     "name": "sampler_gain",
                     "type": "vst3x"
                 },
@@ -127,9 +127,10 @@
                     "type": "internal"
                 },
                 {
-                    "uid": "sushi.testing.gain",
+                    "path": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain",
                     "name": "echo_gain",
-                    "type": "internal"
+                    "type": "vst3x"
                 }
             ]
         },
@@ -157,7 +158,7 @@
                 },
                 {
                     "path": "TroublemakerSmoothGain.vst3",
-                    "uid": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain",
                     "name": "grain_gain",
                     "type": "vst3x"
                 }
@@ -202,7 +203,7 @@
                 },
                 {
                     "path": "TroublemakerSmoothGain.vst3",
-                    "uid": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain",
                     "name": "roar_out_gain",
                     "type": "vst3x"
                 }
@@ -248,7 +249,7 @@
                 },
                 {
                     "path": "TroublemakerSmoothGain.vst3",
-                    "uid": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain",
                     "name": "verb_gain",
                     "type": "vst3x"
                 }
@@ -432,7 +433,7 @@
                 "plugin_name": "sampler_echo_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 0.83
             },
             {
                 "port": 0,
@@ -441,7 +442,7 @@
                 "plugin_name": "sampler_grain_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 0.83
             },
             {
                 "port": 0,
