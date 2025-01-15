@@ -20,9 +20,10 @@
             ],
             "plugins": [
                 {
-                    "uid": "sushi.testing.gain",
+                    "path": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain.vst3",
                     "name": "input_gain",
-                    "type": "internal"
+                    "type": "vst3x"
                 },
                 {
                     "uid": "sushi.testing.send",
@@ -76,9 +77,10 @@
                     "type": "vst3x"
                 },
                 {
-                    "uid": "sushi.testing.gain",
+                    "path": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain.vst3",
                     "name": "sampler_gain",
-                    "type": "internal"
+                    "type": "vst3x"
                 },
                 {
                     "uid": "sushi.testing.send",
@@ -154,9 +156,10 @@
                     "type": "vst3x"
                 },
                 {
-                    "uid": "sushi.testing.gain",
+                    "path": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain.vst3",
                     "name": "grain_gain",
-                    "type": "internal"
+                    "type": "vst3x"
                 }
             ]
         },
@@ -198,9 +201,10 @@
                     "type": "internal"
                 },
                 {
-                    "uid": "sushi.testing.gain",
+                    "path": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain.vst3",
                     "name": "roar_out_gain",
-                    "type": "internal"
+                    "type": "vst3x"
                 }
             ]
         },
@@ -243,9 +247,10 @@
                     "type": "vst3x"
                 },
                 {
-                    "uid": "sushi.testing.gain",
+                    "path": "TroublemakerSmoothGain.vst3",
+                    "uid": "TroublemakerSmoothGain.vst3",
                     "name": "verb_gain",
-                    "type": "internal"
+                    "type": "vst3x"
                 }
             ]
         }
@@ -443,7 +448,7 @@
                 "channel": 0,
                 "cc_number": 4,
                 "plugin_name": "sampler_gain",
-                "parameter_name": "gain",
+                "parameter_name": "Gain",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -812,9 +817,9 @@
                 "channel": 3,
                 "cc_number": 11,
                 "plugin_name": "echo_gain",
-                "parameter_name": "gain",
+                "parameter_name": "Gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 1.0
             },
             {
                 "port": 0,
@@ -902,9 +907,9 @@
                 "channel": 4,
                 "cc_number": 8,
                 "plugin_name": "grain_gain",
-                "parameter_name": "gain",
+                "parameter_name": "Gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 1.0
             },
             {
                 "port": 0,
@@ -929,9 +934,9 @@
                 "channel": 5,
                 "cc_number": 0,
                 "plugin_name": "input_gain",
-                "parameter_name": "gain",
+                "parameter_name": "Gain",
                 "min_range": 0.0,
-                "max_range": 0.83
+                "max_range": 1.0
             },
             {
                 "port": 0,
@@ -1046,9 +1051,9 @@
                 "channel": 6,
                 "cc_number": 8,
                 "plugin_name": "roar_out_gain",
-                "parameter_name": "gain",
+                "parameter_name": "Gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 1.0
             },
             {
                 "port": 0,
@@ -1100,9 +1105,9 @@
                 "channel": 7,
                 "cc_number": 9,
                 "plugin_name": "verb_gain",
-                "parameter_name": "gain",
+                "parameter_name": "Gain",
                 "min_range": 0.0,
-                "max_range": 0.95
+                "max_range": 1.0
             }
         ]
     }
