@@ -415,10 +415,10 @@
                 "port": 0,
                 "channel": 0,
                 "cc_number": 1,
-                "plugin_name": "sampler_gain",
+                "plugin_name": "sampler_verb_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.9
+                "max_range": 0.83
             },
             {
                 "port": 0,
@@ -442,8 +442,8 @@
                 "port": 0,
                 "channel": 0,
                 "cc_number": 4,
-                "plugin_name": "SampleTower",
-                "parameter_name": "Gain",
+                "plugin_name": "sampler_gain",
+                "parameter_name": "gain",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -931,7 +931,7 @@
                 "plugin_name": "input_gain",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 0.83
             },
             {
                 "port": 0,
@@ -940,7 +940,7 @@
                 "plugin_name": "main_echo_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 0.83
             },
             {
                 "port": 0,
@@ -949,7 +949,7 @@
                 "plugin_name": "main_grain_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 0.83
             },
             {
                 "port": 0,
@@ -958,7 +958,7 @@
                 "plugin_name": "main_roar_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 0.83
             },
             {
                 "port": 0,
@@ -967,7 +967,7 @@
                 "plugin_name": "main_verb_send",
                 "parameter_name": "gain",
                 "min_range": 0.0,
-                "max_range": 0.85
+                "max_range": 0.83
             },
             {
                 "port": 0,
