@@ -205,238 +205,196 @@
             "parent_track_id": 0,
             "parameters": [
                 {
-                    "name": "Crossover 0",
-                    "label": "Crossover 0",
-                    "osc_path": "/parameter/Moses/Crossover_0",
-                    "id": 394259868
+                    "name": "Crossover Frequency 1",
+                    "label": "Crossover Frequency 1",
+                    "osc_path": "/parameter/Moses/Crossover_Frequency_1",
+                    "id": 1438851094
                 },
                 {
-                    "name": "Crossover 1",
-                    "label": "Crossover 1",
-                    "osc_path": "/parameter/Moses/Crossover_1",
-                    "id": 394259869
+                    "name": "Crossover Frequency 2",
+                    "label": "Crossover Frequency 2",
+                    "osc_path": "/parameter/Moses/Crossover_Frequency_2",
+                    "id": 1438851093
                 },
                 {
-                    "name": "Crossover 2",
-                    "label": "Crossover 2",
-                    "osc_path": "/parameter/Moses/Crossover_2",
-                    "id": 394259870
+                    "name": "Crossover Frequency 3",
+                    "label": "Crossover Frequency 3",
+                    "osc_path": "/parameter/Moses/Crossover_Frequency_3",
+                    "id": 1438851095
                 },
                 {
-                    "name": "Threshold 0",
-                    "label": "Threshold 0",
-                    "osc_path": "/parameter/Moses/Threshold_0",
-                    "id": 1482336549
+                    "name": "Stereo Mode",
+                    "label": "Stereo Mode",
+                    "osc_path": "/parameter/Moses/Stereo_Mode",
+                    "id": 1255118840
                 },
                 {
-                    "name": "Knee Width 0",
-                    "label": "Knee Width 0",
-                    "osc_path": "/parameter/Moses/Knee_Width_0",
-                    "id": 102193997
+                    "name": "Band 1 Listen",
+                    "label": "Band 1 Listen",
+                    "osc_path": "/parameter/Moses/Band_1_Listen",
+                    "id": 181971786
                 },
                 {
-                    "name": "Attack Time 0",
-                    "label": "Attack Time 0",
-                    "osc_path": "/parameter/Moses/Attack_Time_0",
-                    "id": 1472125672
-                },
-                {
-                    "name": "Release Time 0",
-                    "label": "Release Time 0",
-                    "osc_path": "/parameter/Moses/Release_Time_0",
-                    "id": 1596184841
-                },
-                {
-                    "name": "Ratio 0",
-                    "label": "Ratio 0",
-                    "osc_path": "/parameter/Moses/Ratio_0",
-                    "id": 1209381253
-                },
-                {
-                    "name": "MakUp Gain 0",
-                    "label": "MakUp Gain 0",
-                    "osc_path": "/parameter/Moses/MakUp_Gain_0",
-                    "id": 1028372712
-                },
-                {
-                    "name": "Bypass compression on band 0",
-                    "label": "Bypass compression on band 0",
-                    "osc_path": "/parameter/Moses/Bypass_compression_on_band_0",
-                    "id": 351613000
-                },
-                {
-                    "name": "Kill band 0",
-                    "label": "Kill band 0",
-                    "osc_path": "/parameter/Moses/Kill_band_0",
-                    "id": 102051986
-                },
-                {
-                    "name": "Solo band 0",
-                    "label": "Solo band 0",
-                    "osc_path": "/parameter/Moses/Solo_band_0",
-                    "id": 109618993
-                },
-                {
-                    "name": "Threshold 1",
-                    "label": "Threshold 1",
-                    "osc_path": "/parameter/Moses/Threshold_1",
-                    "id": 1482336550
-                },
-                {
-                    "name": "Knee Width 1",
-                    "label": "Knee Width 1",
-                    "osc_path": "/parameter/Moses/Knee_Width_1",
-                    "id": 102193998
-                },
-                {
-                    "name": "Attack Time 1",
-                    "label": "Attack Time 1",
-                    "osc_path": "/parameter/Moses/Attack_Time_1",
-                    "id": 1472125673
-                },
-                {
-                    "name": "Release Time 1",
-                    "label": "Release Time 1",
-                    "osc_path": "/parameter/Moses/Release_Time_1",
-                    "id": 1596184842
-                },
-                {
-                    "name": "Ratio 1",
-                    "label": "Ratio 1",
-                    "osc_path": "/parameter/Moses/Ratio_1",
-                    "id": 1209381254
-                },
-                {
-                    "name": "MakUp Gain 1",
-                    "label": "MakUp Gain 1",
-                    "osc_path": "/parameter/Moses/MakUp_Gain_1",
-                    "id": 1028372713
-                },
-                {
-                    "name": "Bypass compression on band 1",
-                    "label": "Bypass compression on band 1",
-                    "osc_path": "/parameter/Moses/Bypass_compression_on_band_1",
-                    "id": 351613001
-                },
-                {
-                    "name": "Kill band 1",
-                    "label": "Kill band 1",
-                    "osc_path": "/parameter/Moses/Kill_band_1",
+                    "name": "Band 1 Kill",
+                    "label": "Band 1 Kill",
+                    "osc_path": "/parameter/Moses/Band_1_Kill",
                     "id": 102051987
                 },
                 {
-                    "name": "Solo band 1",
-                    "label": "Solo band 1",
-                    "osc_path": "/parameter/Moses/Solo_band_1",
-                    "id": 109618994
+                    "name": "Band 1 Threshold",
+                    "label": "Band 1 Threshold",
+                    "osc_path": "/parameter/Moses/Band_1_Threshold",
+                    "id": 1482336550
                 },
                 {
-                    "name": "Threshold 2",
-                    "label": "Threshold 2",
-                    "osc_path": "/parameter/Moses/Threshold_2",
-                    "id": 1482336551
+                    "name": "Band 1 Attack",
+                    "label": "Band 1 Attack",
+                    "osc_path": "/parameter/Moses/Band_1_Attack",
+                    "id": 1472125673
                 },
                 {
-                    "name": "Knee Width 2",
-                    "label": "Knee Width 2",
-                    "osc_path": "/parameter/Moses/Knee_Width_2",
-                    "id": 102193999
+                    "name": "Band 1 Release",
+                    "label": "Band 1 Release",
+                    "osc_path": "/parameter/Moses/Band_1_Release",
+                    "id": 1596184842
                 },
                 {
-                    "name": "Attack Time 2",
-                    "label": "Attack Time 2",
-                    "osc_path": "/parameter/Moses/Attack_Time_2",
-                    "id": 1472125674
+                    "name": "Band 1 Ratio",
+                    "label": "Band 1 Ratio",
+                    "osc_path": "/parameter/Moses/Band_1_Ratio",
+                    "id": 1209381254
                 },
                 {
-                    "name": "Release Time 2",
-                    "label": "Release Time 2",
-                    "osc_path": "/parameter/Moses/Release_Time_2",
-                    "id": 1596184843
+                    "name": "Band 1 Make Up",
+                    "label": "Band 1 Make Up",
+                    "osc_path": "/parameter/Moses/Band_1_Make_Up",
+                    "id": 832591912
                 },
                 {
-                    "name": "Ratio 2",
-                    "label": "Ratio 2",
-                    "osc_path": "/parameter/Moses/Ratio_2",
-                    "id": 1209381255
+                    "name": "Band 2 Listen",
+                    "label": "Band 2 Listen",
+                    "osc_path": "/parameter/Moses/Band_2_Listen",
+                    "id": 181971787
                 },
                 {
-                    "name": "MakUp Gain 2",
-                    "label": "MakUp Gain 2",
-                    "osc_path": "/parameter/Moses/MakUp_Gain_2",
-                    "id": 1028372714
-                },
-                {
-                    "name": "Bypass compression on band 2",
-                    "label": "Bypass compression on band 2",
-                    "osc_path": "/parameter/Moses/Bypass_compression_on_band_2",
-                    "id": 351613002
-                },
-                {
-                    "name": "Kill band 2",
-                    "label": "Kill band 2",
-                    "osc_path": "/parameter/Moses/Kill_band_2",
+                    "name": "Band 2 Kill",
+                    "label": "Band 2 Kill",
+                    "osc_path": "/parameter/Moses/Band_2_Kill",
                     "id": 102051988
                 },
                 {
-                    "name": "Solo band 2",
-                    "label": "Solo band 2",
-                    "osc_path": "/parameter/Moses/Solo_band_2",
-                    "id": 109618995
+                    "name": "Band 2 Threshold",
+                    "label": "Band 2 Threshold",
+                    "osc_path": "/parameter/Moses/Band_2_Threshold",
+                    "id": 1482336551
                 },
                 {
-                    "name": "Threshold 3",
-                    "label": "Threshold 3",
-                    "osc_path": "/parameter/Moses/Threshold_3",
-                    "id": 1482336552
+                    "name": "Band 2 Attack",
+                    "label": "Band 2 Attack",
+                    "osc_path": "/parameter/Moses/Band_2_Attack",
+                    "id": 1472125674
                 },
                 {
-                    "name": "Knee Width 3",
-                    "label": "Knee Width 3",
-                    "osc_path": "/parameter/Moses/Knee_Width_3",
-                    "id": 102194000
+                    "name": "Band 2 Release",
+                    "label": "Band 2 Release",
+                    "osc_path": "/parameter/Moses/Band_2_Release",
+                    "id": 1596184843
                 },
                 {
-                    "name": "Attack Time 3",
-                    "label": "Attack Time 3",
-                    "osc_path": "/parameter/Moses/Attack_Time_3",
-                    "id": 1472125675
+                    "name": "Band 2 Ratio",
+                    "label": "Band 2 Ratio",
+                    "osc_path": "/parameter/Moses/Band_2_Ratio",
+                    "id": 1209381255
                 },
                 {
-                    "name": "Release Time 3",
-                    "label": "Release Time 3",
-                    "osc_path": "/parameter/Moses/Release_Time_3",
-                    "id": 1596184844
+                    "name": "Band 2 Make Up",
+                    "label": "Band 2 Make Up",
+                    "osc_path": "/parameter/Moses/Band_2_Make_Up",
+                    "id": 832591913
                 },
                 {
-                    "name": "Ratio 3",
-                    "label": "Ratio 3",
-                    "osc_path": "/parameter/Moses/Ratio_3",
-                    "id": 1209381256
+                    "name": "Band 3 Listen",
+                    "label": "Band 3 Listen",
+                    "osc_path": "/parameter/Moses/Band_3_Listen",
+                    "id": 181971788
                 },
                 {
-                    "name": "MakUp Gain 3",
-                    "label": "MakUp Gain 3",
-                    "osc_path": "/parameter/Moses/MakUp_Gain_3",
-                    "id": 1028372715
-                },
-                {
-                    "name": "Bypass compression on band 3",
-                    "label": "Bypass compression on band 3",
-                    "osc_path": "/parameter/Moses/Bypass_compression_on_band_3",
-                    "id": 351613003
-                },
-                {
-                    "name": "Kill band 3",
-                    "label": "Kill band 3",
-                    "osc_path": "/parameter/Moses/Kill_band_3",
+                    "name": "Band 3 Kill",
+                    "label": "Band 3 Kill",
+                    "osc_path": "/parameter/Moses/Band_3_Kill",
                     "id": 102051989
                 },
                 {
-                    "name": "Solo band 3",
-                    "label": "Solo band 3",
-                    "osc_path": "/parameter/Moses/Solo_band_3",
-                    "id": 109618996
+                    "name": "Band 3 Threshold",
+                    "label": "Band 3 Threshold",
+                    "osc_path": "/parameter/Moses/Band_3_Threshold",
+                    "id": 1482336552
+                },
+                {
+                    "name": "Band 3 Attack",
+                    "label": "Band 3 Attack",
+                    "osc_path": "/parameter/Moses/Band_3_Attack",
+                    "id": 1472125675
+                },
+                {
+                    "name": "Band 3 Release",
+                    "label": "Band 3 Release",
+                    "osc_path": "/parameter/Moses/Band_3_Release",
+                    "id": 1596184844
+                },
+                {
+                    "name": "Band 3 Ratio",
+                    "label": "Band 3 Ratio",
+                    "osc_path": "/parameter/Moses/Band_3_Ratio",
+                    "id": 1209381256
+                },
+                {
+                    "name": "Band 3 Make Up",
+                    "label": "Band 3 Make Up",
+                    "osc_path": "/parameter/Moses/Band_3_Make_Up",
+                    "id": 832591914
+                },
+                {
+                    "name": "Band 4 Listen",
+                    "label": "Band 4 Listen",
+                    "osc_path": "/parameter/Moses/Band_4_Listen",
+                    "id": 181971789
+                },
+                {
+                    "name": "Band 4 Kill",
+                    "label": "Band 4 Kill",
+                    "osc_path": "/parameter/Moses/Band_4_Kill",
+                    "id": 102051990
+                },
+                {
+                    "name": "Band 4 Threshold",
+                    "label": "Band 4 Threshold",
+                    "osc_path": "/parameter/Moses/Band_4_Threshold",
+                    "id": 1482336553
+                },
+                {
+                    "name": "Band 4 Attack",
+                    "label": "Band 4 Attack",
+                    "osc_path": "/parameter/Moses/Band_4_Attack",
+                    "id": 1472125676
+                },
+                {
+                    "name": "Band 4 Release",
+                    "label": "Band 4 Release",
+                    "osc_path": "/parameter/Moses/Band_4_Release",
+                    "id": 1596184845
+                },
+                {
+                    "name": "Band 4 Ratio",
+                    "label": "Band 4 Ratio",
+                    "osc_path": "/parameter/Moses/Band_4_Ratio",
+                    "id": 1209381257
+                },
+                {
+                    "name": "Band 4 Make Up",
+                    "label": "Band 4 Make Up",
+                    "osc_path": "/parameter/Moses/Band_4_Make_Up",
+                    "id": 832591915
                 }
             ]
         },
