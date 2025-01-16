@@ -530,7 +530,7 @@
                 "channel": 2,
                 "cc_number": 0,
                 "plugin_name": "Moses",
-                "parameter_name": "Kill band 0",
+                "parameter_name": "Band 1 Kill",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -539,7 +539,7 @@
                 "channel": 2,
                 "cc_number": 1,
                 "plugin_name": "Moses",
-                "parameter_name": "Attack Time 0",
+                "parameter_name": "Band 1 Attack",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -548,7 +548,7 @@
                 "channel": 2,
                 "cc_number": 2,
                 "plugin_name": "Moses",
-                "parameter_name": "Release Time 0",
+                "parameter_name": "Band 1 Release",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -557,7 +557,7 @@
                 "channel": 2,
                 "cc_number": 3,
                 "plugin_name": "Moses",
-                "parameter_name": "Threshold 0",
+                "parameter_name": "Band 1 Threshold",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -566,7 +566,7 @@
                 "channel": 2,
                 "cc_number": 4,
                 "plugin_name": "Moses",
-                "parameter_name": "MakUp Gain 0",
+                "parameter_name": "Band 1 Make Up",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -575,7 +575,7 @@
                 "channel": 2,
                 "cc_number": 5,
                 "plugin_name": "Moses",
-                "parameter_name": "Kill band 1",
+                "parameter_name": "Band 2 Kill",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -584,7 +584,7 @@
                 "channel": 2,
                 "cc_number": 6,
                 "plugin_name": "Moses",
-                "parameter_name": "Attack Time 1",
+                "parameter_name": "Band 2 Attack",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -593,7 +593,7 @@
                 "channel": 2,
                 "cc_number": 7,
                 "plugin_name": "Moses",
-                "parameter_name": "Release Time 1",
+                "parameter_name": "Band 2 Release",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -602,7 +602,7 @@
                 "channel": 2,
                 "cc_number": 8,
                 "plugin_name": "Moses",
-                "parameter_name": "Threshold 1",
+                "parameter_name": "Band 2 Threshold",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -611,7 +611,7 @@
                 "channel": 2,
                 "cc_number": 9,
                 "plugin_name": "Moses",
-                "parameter_name": "MakUp Gain 1",
+                "parameter_name": "Band 2 Make Up",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -620,7 +620,7 @@
                 "channel": 2,
                 "cc_number": 10,
                 "plugin_name": "Moses",
-                "parameter_name": "Kill band 2",
+                "parameter_name": "Band 3 Kill",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -629,7 +629,7 @@
                 "channel": 2,
                 "cc_number": 11,
                 "plugin_name": "Moses",
-                "parameter_name": "Attack Time 2",
+                "parameter_name": "Band 3 Attack",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -638,7 +638,7 @@
                 "channel": 2,
                 "cc_number": 12,
                 "plugin_name": "Moses",
-                "parameter_name": "Release Time 2",
+                "parameter_name": "Band 3 Release",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -647,7 +647,7 @@
                 "channel": 2,
                 "cc_number": 13,
                 "plugin_name": "Moses",
-                "parameter_name": "Threshold 2",
+                "parameter_name": "Band 3 Threshold",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -656,7 +656,7 @@
                 "channel": 2,
                 "cc_number": 14,
                 "plugin_name": "Moses",
-                "parameter_name": "MakUp Gain 2",
+                "parameter_name": "Band 3 Make Up",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -665,7 +665,7 @@
                 "channel": 2,
                 "cc_number": 15,
                 "plugin_name": "Moses",
-                "parameter_name": "Kill band 3",
+                "parameter_name": "Band 4 Kill",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -674,7 +674,7 @@
                 "channel": 2,
                 "cc_number": 16,
                 "plugin_name": "Moses",
-                "parameter_name": "Attack Time 3",
+                "parameter_name": "Band 4 Attack",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -683,7 +683,7 @@
                 "channel": 2,
                 "cc_number": 17,
                 "plugin_name": "Moses",
-                "parameter_name": "Release Time 3",
+                "parameter_name": "Band 4 Release",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -692,7 +692,7 @@
                 "channel": 2,
                 "cc_number": 18,
                 "plugin_name": "Moses",
-                "parameter_name": "Threshold 3",
+                "parameter_name": "Band 4 Threshold",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
@@ -701,7 +701,7 @@
                 "channel": 2,
                 "cc_number": 19,
                 "plugin_name": "Moses",
-                "parameter_name": "MakUp Gain 3",
+                "parameter_name": "Band 4 Make Up",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
