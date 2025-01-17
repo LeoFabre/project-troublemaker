@@ -258,6 +258,12 @@
     ],
     "initial_state": [
         {
+            "processor": "input_gain",
+            "parameters": {
+                "Gain": 0.0
+            }
+        },
+        {
             "processor": "main_echo_send",
             "properties": {
                 "destination_name": "echo_return"
@@ -469,7 +475,7 @@
                 "plugin_name": "SimpleDualParametricEq",
                 "parameter_name": "EQ1 Frequency",
                 "min_range": 0.0,
-                "max_range": 0.004004004
+                "max_range": 1.0
             },
             {
                 "port": 0,
@@ -504,8 +510,8 @@
                 "cc_number": 5,
                 "plugin_name": "SimpleDualParametricEq",
                 "parameter_name": "EQ2 Frequency",
-                "min_range": 0.004004004,
-                "max_range": 0.009
+                "min_range": 0.0,
+                "max_range": 1.0
             },
             {
                 "port": 0,
@@ -754,26 +760,17 @@
                 "port": 0,
                 "channel": 3,
                 "cc_number": 5,
-                "plugin_name": "Strange Returns",
-                "parameter_name": "Sample Rate Reduction",
+                "plugin_name": "echo_highpass_filter",
+                "parameter_name": "Q",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
             {
                 "port": 0,
                 "channel": 3,
-                "cc_number": 5,
+                "cc_number": 6,
                 "plugin_name": "echo_highpass_filter",
                 "parameter_name": "frequency",
-                "min_range": 0.0,
-                "max_range": 1.0
-            },
-            {
-                "port": 0,
-                "channel": 6,
-                "cc_number": 0,
-                "plugin_name": "echo_highpass_filter",
-                "parameter_name": "Q",
                 "min_range": 0.0,
                 "max_range": 1.0
             },
