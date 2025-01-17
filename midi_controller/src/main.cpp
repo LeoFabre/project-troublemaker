@@ -117,8 +117,8 @@ CCPotentiometer DelayLFODepth = {mux2.pin(12), {1, Channel_4}};
 CCPotentiometer DelayTime = {mux2.pin(13), {2, Channel_4}};
 CCPotentiometer DelayFeedback = {mux2.pin(14), {3, Channel_4}};
 CCPotentiometer DelaySampleRate = {mux2.pin(15), {4, Channel_4}};
-CCPotentiometer DelayLowCutResonance = {mux3.pin(0), {5, Channel_4}}; //Lowcut to be implemented
-CCPotentiometer DelayLowCutFreq = {mux3.pin(1), {6, Channel_4}}; //Lowcut to be implemented
+CCPotentiometer DelayLowCutResonance = {mux3.pin(0), {5, Channel_4}};
+CCPotentiometer DelayLowCutFreq = {mux3.pin(1), {6, Channel_4}};
 CCPotentiometer DelayHighCutResonance = {mux3.pin(2), {7, Channel_4}};
 CCPotentiometer DelayHighCutFreq = {mux3.pin(3), {8, Channel_4}};
 CCPotentiometer DelayStereoWidth = {mux3.pin(4), {9, Channel_4}};
@@ -206,10 +206,127 @@ analog_t mapPotForGainControl(analog_t raw) {
     return static_cast<analog_t>(gainValue * maxRawValue);
 }
 
+// Received when the midi controller is connected to Sushi
+const uint8_t predefinedSysEx[] = {0xF0, 0x7D, 0x01, 0x02, 0x03, 0xF7};
+const uint8_t predefinedAnswer[] = {0xF0, 0x7D, 0x02, 0x03, 0x04, 0xF7};
+
+void SendControllerState()
+{
+    midi_interface.send(predefinedAnswer);
+    //send SamplerSpeed message
+    SamplerSpeed.forcedUpdate();
+    SamplerReverb.forcedUpdate();
+    SamplerDelay.forcedUpdate();
+    SamplerGrain.forcedUpdate();
+    SamplerLevel.forcedUpdate();
+
+    Eq1Switch.update();
+    Eq1Freq.forcedUpdate();
+    Eq1Gain.forcedUpdate();
+    Eq1Q.forcedUpdate();
+
+    Eq2Switch.update();
+    Eq2Freq.forcedUpdate();
+    Eq2Gain.forcedUpdate();
+    Eq2Q.forcedUpdate();
+
+    XSubSwitch.update();
+    XSubAtk.forcedUpdate();
+    XSubRel.forcedUpdate();
+    XSubTresh.forcedUpdate();
+    XSubGain.forcedUpdate();
+
+    XBassSwitch.update();
+    XBassAtk.forcedUpdate();
+    XBassRel.forcedUpdate();
+    XBassTresh.forcedUpdate();
+    XBassGain.forcedUpdate();
+
+    XMidSwitch.update();
+    XMidAtk.forcedUpdate();
+    XMidRel.forcedUpdate();
+    XMidTresh.forcedUpdate();
+    XMidGain.forcedUpdate();
+
+    DelayLFORate.forcedUpdate();
+    DelayLFODepth.forcedUpdate();
+    DelayTime.forcedUpdate();
+    DelayFeedback.forcedUpdate();
+    DelaySampleRate.forcedUpdate();
+    DelayLowCutResonance.forcedUpdate();
+    DelayLowCutFreq.forcedUpdate();
+    DelayHighCutResonance.forcedUpdate();
+    DelayHighCutFreq.forcedUpdate();
+    DelayStereoWidth.forcedUpdate();
+    DelayNoise.forcedUpdate();
+    DelayLevel.forcedUpdate();
+    DelayTapTempo.update();
+    DelayType.update();
+
+    GrainPitch.forcedUpdate();
+    GrainFine.forcedUpdate();
+    GrainSize.forcedUpdate();
+    GrainTexture.forcedUpdate();
+    GrainStretch.forcedUpdate();
+    GrainFeedback.forcedUpdate();
+    GrainShimmer.forcedUpdate();
+    GrainHighCut.forcedUpdate();
+    GrainLevel.forcedUpdate();
+    GrainType.update();
+    GrainPlayback.update();
+
+    SubRoarInGain.forcedUpdate();
+    SubRoarLowPassFreq.forcedUpdate();
+    SubRoarFold.forcedUpdate();
+    SubRoarEmphasisFreq.forcedUpdate();
+    SubRoarEmphasisGain.forcedUpdate();
+    SubRoarReverbMix.forcedUpdate();
+    SubRoarReverbRoomSize.forcedUpdate();
+    SubRoarReverbDecay.forcedUpdate();
+    SubRoarLevel.forcedUpdate();
+
+    ReverbLowCutFreq.forcedUpdate();
+    ReverbHighCutFreq.forcedUpdate();
+    ReverbDecay.forcedUpdate();
+    ReverbPreDelay.forcedUpdate();
+    ReverbRoomSize.forcedUpdate();
+    ReverbBellResonance.forcedUpdate();
+    ReverbBellFrequency.forcedUpdate();
+    ReverbLFODepth.forcedUpdate();
+    ReverbLFORate.forcedUpdate();
+    ReverbLevel.forcedUpdate();
+
+    InputAGain.forcedUpdate();
+    InputADelaySend.forcedUpdate();
+    InputAGrainSend.forcedUpdate();
+    InputASubRoarSend.forcedUpdate();
+    InputAReverbSend.forcedUpdate();
+
+    //TODO: Implement input B
+}
+
+// Custom MIDI callback that prints incoming SysEx messages.
+struct MyMIDI_Callbacks : MIDI_Callbacks {
+
+    // This callback function is called when a SysEx message is received.
+    void onSysExMessage(MIDI_Interface &, SysExMessage sysex) override {
+        // Print the message
+        if (sysex.length == sizeof(predefinedSysEx) &&
+            memcmp(sysex.data, predefinedSysEx, sizeof(predefinedSysEx)) == 0) {
+            // Send state
+            SendControllerState();
+        }
+    }
+
+} callback {};
+
 void setup()
 {
     Control_Surface.begin();
     samplerButtons.begin();
+
+    midi_interface.begin();
+    midi_interface.setCallbacks(callback);
 
     SamplerSpeed.map(fixDeadZoneAndInvertPot);
     SamplerReverb.map(mapPotForGainControl);
@@ -270,12 +387,6 @@ void setup()
     GrainType.invert();
     GrainPlayback.invert();
 
-    InputAGain.map(fixDeadZoneAndInvertPot);
-    InputADelaySend.map(mapPotForGainControl);
-    InputAGrainSend.map(mapPotForGainControl);
-    InputASubRoarSend.map(mapPotForGainControl);
-    InputAReverbSend.map(mapPotForGainControl);
-
     SubRoarInGain.map(mapPotForGainControl);
     SubRoarLowPassFreq.map(fixDeadZoneAndInvertPot);
     SubRoarFold.map(fixDeadZoneAndInvertPot);
@@ -296,6 +407,12 @@ void setup()
     ReverbLFODepth.map(fixDeadZoneAndInvertPot);
     ReverbLFORate.map(fixDeadZoneAndInvertPot);
     ReverbLevel.map(fixDeadZoneAndInvertPot);
+
+    InputAGain.map(fixDeadZoneAndInvertPot);
+    InputADelaySend.map(mapPotForGainControl);
+    InputAGrainSend.map(mapPotForGainControl);
+    InputASubRoarSend.map(mapPotForGainControl);
+    InputAReverbSend.map(mapPotForGainControl);
 
     Serial.begin(115200);
 }
