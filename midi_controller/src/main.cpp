@@ -156,14 +156,14 @@ CCPotentiometer InputAReverbSend = {mux4.pin(8), {4, Channel_6}};
 // CCPotentiometer InputBReverbSend = {mux4.pin(9), {10, Channel_16}};
 
 //Sub roar controls
-CCPotentiometer SubRoarInGain = {mux4.pin(11), {0, Channel_7}};
-CCPotentiometer SubRoarLowPassFreq = {mux4.pin(12), {1, Channel_7}};
-CCPotentiometer SubRoarFold = {mux4.pin(13), {2, Channel_7}};
-CCPotentiometer SubRoarEmphasisFreq = {mux5.pin(0), {3, Channel_7}};
-CCPotentiometer SubRoarEmphasisGain = {mux5.pin(1), {4, Channel_7}};
-CCPotentiometer SubRoarReverbMix = {mux5.pin(2), {5, Channel_7}};
-CCPotentiometer SubRoarReverbRoomSize = {mux5.pin(3), {6, Channel_7}};
-CCPotentiometer SubRoarReverbDecay = {mux5.pin(4), {7, Channel_7}};
+CCPotentiometer SubRoarHiCutFreq = {mux4.pin(11), {0, Channel_7}};
+CCPotentiometer SubRoarDiode = {mux4.pin(13), {1, Channel_7}};
+CCPotentiometer SubRoarEmphasisFreq = {mux5.pin(0), {2, Channel_7}};
+CCPotentiometer SubRoarEmphasisGain = {mux5.pin(1), {3, Channel_7}};
+CCPotentiometer SubRoarReverbMix = {mux5.pin(2), {4, Channel_7}};
+CCPotentiometer SubRoarReverbRoomSize = {mux5.pin(3), {5, Channel_7}};
+CCPotentiometer SubRoarReverbDecay = {mux5.pin(4), {6, Channel_7}};
+CCPotentiometer SubRoarReverbLowCutFreq = {mux5.pin(4), {7, Channel_7}};
 CCPotentiometer SubRoarLevel = {mux5.pin(5), {8, Channel_7}};
 
 //Reverb controls
@@ -275,7 +275,7 @@ void SendControllerState()
     GrainType.update();
     GrainPlayback.update();
 
-    SubRoarInGain.forcedUpdate();
+    SubRoarHiCutFreq.forcedUpdate();
     SubRoarLowPassFreq.forcedUpdate();
     SubRoarFold.forcedUpdate();
     SubRoarEmphasisFreq.forcedUpdate();
@@ -387,7 +387,7 @@ void setup()
     GrainType.invert();
     GrainPlayback.invert();
 
-    SubRoarInGain.map(mapPotForGainControl);
+    SubRoarHiCutFreq.map(mapPotForGainControl);
     SubRoarLowPassFreq.map(fixDeadZoneAndInvertPot);
     SubRoarFold.map(fixDeadZoneAndInvertPot);
     SubRoarEmphasisFreq.map(fixDeadZoneAndInvertPot);
