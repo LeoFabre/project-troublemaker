@@ -255,6 +255,76 @@
             ]
         }
     ],
+    "post_track" : {
+        "name" : "master",
+        "plugins": [
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_31",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_40",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_50",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_63",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_80",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_125",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_250",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_500",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_1k",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_2k",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_4k",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_8k",
+                "type": "internal"
+            },
+            {
+                "uid": "sushi.brickworks.multi_filter",
+                "name": "eq_16k",
+                "type": "internal"
+            }
+        ]
+    },
     "initial_state": [
         {
             "processor": "input_a_gain",
@@ -385,6 +455,97 @@
             "parameters": {
                 "Mix": 1.0,
                 "Gain": 1.0
+            }
+        },
+        {
+            "processor": "eq_31",
+            "parameters": {
+                "frequency": 0.0912642099425935,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_40",
+            "parameters": {
+                "frequency": 0.1031623308649146,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_50",
+            "parameters": {
+                "frequency": 0.1143590887655639,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_63",
+            "parameters": {
+                "frequency": 0.1267808924596905,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_80",
+            "parameters": {
+                "frequency": 0.1405673835929606,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_125",
+            "parameters": {
+                "frequency": 0.1691514896806584,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_250",
+            "parameters": {
+                "frequency": 0.2219562259065415,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_500",
+            "parameters": {
+                "frequency": 0.2870838381875043,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_1k",
+            "parameters": {
+                "frequency": 0.3674100775474562,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_2k",
+            "parameters": {
+                "frequency": 0.4664818000278818,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_4k",
+            "parameters": {
+                "frequency": 0.5886735803657521,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_8k",
+            "parameters": {
+                "frequency": 0.7393808741153725,
+                "Q": 0.095
+            }
+        },
+        {
+            "processor": "eq_16k",
+            "parameters": {
+                "frequency": 0.9252582574101563,
+                "Q": 0.095
             }
         }
     ],
