@@ -124,7 +124,7 @@ CCPotentiometer DelayHighCutFreq = {mux3.pin(3), {8, Channel_4}};
 CCPotentiometer DelayStereoWidth = {mux3.pin(4), {9, Channel_4}};
 CCPotentiometer DelayNoise = {mux3.pin(5), {10, Channel_4}};
 CCPotentiometer DelayLevel = {mux3.pin(6), {11, Channel_4}};
-CCButtonLatched DelayTapTempo = {A7, {12, Channel_4}};
+CCButton DelayTapTempo = {A7, {12, Channel_4}};
 CCButton DelayType = {A8, {13, Channel_4}};
 
 //Grain controls
@@ -276,8 +276,6 @@ void SendControllerState()
     GrainPlayback.update();
 
     SubRoarHiCutFreq.forcedUpdate();
-    SubRoarLowPassFreq.forcedUpdate();
-    SubRoarFold.forcedUpdate();
     SubRoarEmphasisFreq.forcedUpdate();
     SubRoarEmphasisGain.forcedUpdate();
     SubRoarReverbMix.forcedUpdate();
@@ -388,8 +386,6 @@ void setup()
     GrainPlayback.invert();
 
     SubRoarHiCutFreq.map(mapPotForGainControl);
-    SubRoarLowPassFreq.map(fixDeadZoneAndInvertPot);
-    SubRoarFold.map(fixDeadZoneAndInvertPot);
     SubRoarEmphasisFreq.map(fixDeadZoneAndInvertPot);
     SubRoarEmphasisGain.map(fixDeadZoneAndInvertPot);
     SubRoarReverbMix.map(fixDeadZoneAndInvertPot);
