@@ -1,4 +1,4 @@
-# 🚨PROJECT TROUBLEMAKER🚨 - 👷‍♂️WORK IN PROGRESS👷‍♂️
+# 🚨PROJECT TROUBLEMAKER🚨 - ABANDONED, new project coming very soon
 ### The original dub soundsystem-style, fully digital, open source music preamp, based on ELK Audio OS.
 
 This project is meant to be a fully digital sound system preamp, with a lot of features and a lot of fun to use. 
